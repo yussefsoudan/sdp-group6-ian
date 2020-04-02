@@ -4,6 +4,9 @@
 
 <html>
 <title>IAN</title>
+<link rel="icon" 
+      type="image/png" 
+      href="./figs/logo.jpg">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -28,6 +31,29 @@ body, html {
 
 .w3-bar .w3-button {
   padding: 16px;
+}
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: black;
+  color: white;
 }
 </style>
 <body>
@@ -64,41 +90,120 @@ body, html {
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small" style="font-size:430% !important;">IAN</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">IAN</span><br>
-    <span class="w3-large" style="font-size:130% !important;"><i>Your Interactive Airport Navigator</i>.</span>
+  <div class="w3-display-left w3-text-white" style="padding:48px; margin-top: 10% !important;">
+    <span class="w3-large" style=" font-size:1300% !important;">IAN</span><br>
+    <p class="w3-large" style="font-size:130% !important; margin-top: -20% !important;"><i>Your Interactive Airport Navigator</i>.</p>
     <p><a href="#system" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
   </div> 
   
 </header>
-<hr>
+
 <!-- System Section -->
-<div class="w3-container" style="padding:128px 16px" id="system">
+<div class="w3-container" style="padding:128px 16px; background-color: lightgrey" id="system">
   <h3 class="w3-center">System</h3>
-  <p class="w3-center w3-large">Key features of our system</p>
+  <p class="w3-center w3-large">System Costs</p>
 </div>
-<hr>
+
 <!-- How It Works Section -->
-<div class="w3-container" style="padding:128px 16px" id="howitworks">
+<div class="w3-container" style="padding:128px 16px; " id="howitworks">
   <h3 class="w3-center">How It Works</h3>
   <p class="w3-center w3-large">Key features of our system</p>
 </div>
-<hr>
+
 <!-- Evaluation Section -->
-<div class="w3-container" style="padding:128px 16px" id="evaluation">
+<div class="w3-container" style="padding:128px 16px; background-color: lightgrey" id="evaluation">
   <h3 class="w3-center">Evaluation</h3>
   <p class="w3-center w3-large">Key features of our system</p>
 </div>
-<hr>
+
+
+
+
 <!-- Budget Section -->
-<div class="w3-container" style="padding:128px 16px" id="budget">
+<div class="w3-container" style="padding:128px 16px; " id="budget">
   <h3 class="w3-center">Budget</h3>
-  <p class="w3-center w3-large">Key features of our system</p>
+  <p class="w3-center w3-large">System Costs</p>
+  <p class="w3-center">The total cost of items borrowed in the making of the system is <b>£1502</b>. <br>
+  The breakdown of the costs is shown in by the following table and piechart.</p>
+  <table id="customers" style="width:30%; margin-left: auto;
+  margin-right: auto;">
+  <tr>
+    <th>Item</th>
+    <th>Estimated Cost (£)</th>
+  </tr>
+  <tr>
+    <td>Turtlebot WafflePi 3</td>
+    <td>1,300</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi 3 (x2)</td>
+    <td>35</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi 7” Touchscreen Display</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>Logitech C270 HD Webcam (x2)</td>
+    <td>26</td>
+  </tr>
+  <tr>
+    <td>Additional TB3 Waffle Plate-IPL-01 (8ea)</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td>Emergency Stop Button</td>
+    <td>8</td>
+  </tr>
+   
+  <tr>
+    <td>Mock Seat Belt</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>Chair Frame (incl. Lego armrests and luggage compartments)</td>
+    <td>23</td>
+  </tr>
+  <tr>
+</table>
+<p class="w3-center">The total cost of externally purchased items is <b>£29.30</b>, and is broken down by the following table.</p>
+<table id="customers" style="width:30%; margin-left: auto;
+  margin-right: auto;">
+  <tr>
+    <th>Item</th>
+    <th>Estimated Cost (£)</th>
+  </tr>
+  <tr>
+    <td>Cable wire extensions</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Long ribbon cable</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi Cooling Fan</td>
+    <td>14.30</td>
+  </tr>
+  <tr>
+    <td>Armrest Components (x2)</td>
+    <td>3</td>
+  </tr>
+  <tr>
+</table>
+<p class="w3-center" style="width: 40%; margin-left: auto;
+  margin-right: auto;">For our final demo, we planned on including a footrest for the passengers, 
+as well as focussing on aesthetics such as covering for the armrests, cushioning for the chair 
+and wire concealment. We also planned to include text-to-speech features and warning lights 
+to alert other passengers who may come in the way of the system. We estimate that this would 
+cost an additional £20 - £25.
+</p>
 </div>
-<hr>
+
+
 <!-- Team Section -->
-<div class="w3-container" style="padding:128px 16px" id="team">
+<div class="w3-container" style="padding:128px 16px; background-color: lightgrey" id="team">
+
   <h3 class="w3-center">Team</h3>
   <p class="w3-center w3-large">Team Organisation</p>
   <div class="w3-container" style="padding: 25px; word-wrap: break-word; "> 
