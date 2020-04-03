@@ -190,7 +190,7 @@ body, html {
   <p class="w3-center w3-large">DB/Scanning</p>
   <div style="padding:10px 10px; display:inline-block;">
   <p class="w3-quarter " style="margin:2%;  width:40%">
-  <span class="w3-large"><b>Scanning Setup</b></span><br>
+  <span class="w3-large"><b>1. Scanning Setup</b></span><br>
   We are using a Logitech Webcam to act as a barcode scanner. 
   The passenger can scan their boarding pass's barcode and the system will use 
   that to retrieve their flight information from the DB on the Server PI. 
@@ -209,7 +209,7 @@ body, html {
     border-color: black;
     border-image: url(border.png) 30 round;">
   <p class="w3-quarter " style="margin:2%; margin-left: 15%;  width:40%">
-  <span class="w3-large"><b>The Database</b></span><br>
+  <span class="w3-large"><b>2. The Database</b></span><br>
   The image on the left shows the final structure of our DB. Initially we had the DB on the User Pi 
   for easy access, but upon feedback from the SDP team, we later moved it to a different Pi (the Server Pi) to mimic the 
   real-world situation where the DB would live on a remote server.
@@ -217,12 +217,12 @@ body, html {
   </div>
   <div style="padding:10px 10px; display:inline-block;">
   <p class="w3-quarter " style="margin:2%;  width:40%">
-  <span class="w3-large"><b>User Pi and Server Pi Communication</b></span><br>
+  <span class="w3-large"><b>3. User Pi and Server Pi Communication</b></span><br>
   The next step after the migration of the DB on the Server Pi was to establish a secure and reliable communication channel between the User Pi and the Server Pi 
   in order to perform the read and query operations. 
   </p>
   <p class="w3-quarter " style="margin:2%;  width:40%">
-  <span class="w3-large"><b>Live Updates</b></span><br>
+  <span class="w3-large"><b>4. Live Updates</b></span><br>
   An important functionality of our product is to notify the user that a change has occurred to their flight.  
   To accomplish that, we have the Server Pi "listening" for any change in the records of the DB that concern the current user of the system. 
   If there is a change in their flight information, the Server Pi writes those changes to a file in the User Pi. Similar to the Server Pi, 
