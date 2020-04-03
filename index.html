@@ -21,6 +21,14 @@ body, html {
   scroll-behavior: smooth;
 }
 
+#content {
+        width: 800px;
+        margin: auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
 /* Full height image header */
 .bgimg-1 {
   background-position: center;
@@ -110,7 +118,7 @@ body, html {
   <p class="w3-center w3-large">Navigation</p>
   <div style="padding:10px 10px; display:inline-block;">
   <p class="w3-quarter " style="margin:2%;  width:40%">
-  <span class="w3-large"><b>Making a Map</b></span><br>
+  <span class="w3-large"><b>1. Making a Map</b></span><br>
   The <b>SLAM</b> (<b>Simultaneous Localization and Mapping</b>) is a technique to draw a map by estimating the 
   current location in an arbitrary space. Using SLAM we can create a 2-D occupancy grid map (like a building floorplan) 
   from laser and pose data collected by a mobile robot. The result of this operation was the map used for navigation.
@@ -123,7 +131,7 @@ body, html {
 
   <div style="padding:0px 10px; display:inline-block;">
     <p class="w3-quarter " style="margin:2%;  width:40%">
-    <span class="w3-large"><b>Navigation with RViz</b></span><br>
+    <span class="w3-large"><b>2. Navigation with RViz</b></span><br>
     The goal of navigation is to move the robot from a location to a specified destination 
     in a given environment. For this purpose, a map that contains the geometric information of objects 
     and walls of the given environment is required. As described earlier, using SLAM, the 
@@ -143,7 +151,7 @@ body, html {
     </p>
 
     <p class="w3-quarter " style="margin:2%;  width:40%">
-    <span class="w3-large"><b>Parameter Tuning</b></span><br>
+    <span class="w3-large"><b>3. Parameter Tuning</b></span><br>
     Even though the Navigation functionality was working, it was not accurate. To alleviate that, we had to tune certain navigation parameters. 
     The job of navigation stack is to produce a safe path for the Turtlebot to execute, by processing data from odometry, 
     sensors and the environment map. Maximizing the performance of this navigation stack requires some fine-tuning of parameters.
@@ -162,7 +170,7 @@ body, html {
 
   <div style="padding:0px 10px; display:inline-block; ">
   <p class="w3-quarter " style="margin:2%;  width:40%">
-  <span class="w3-large"><b>Navigation Scripting</b></span><br>
+  <span class="w3-large"><b>4. Navigation Scripting</b></span><br>
   We wanted to replace the functionality RViz was giving us, which was to publish the initial position as well as the destination <i>manually</i>. 
   The python scripts we have written use packages like <b>rospy, move_base_msgs.msg, actionlib, actionlib_msgs</b>, and <b>geometry_msgs</b> to manipulate 
   the message types for publishing. These libraries give us access to the message parameters.
@@ -179,7 +187,7 @@ body, html {
   </p>
 
   <p class="w3-quarter " style="margin:2%;  width:40%">
-    <span class="w3-large"><b>Live Location Tracking</b></span><br>
+    <span class="w3-large"><b>5. Live Location Tracking</b></span><br>
      For the live-tracking feature, there were no already-existing packages that had such functionality, so this was manually 
      implemented by the team. Using the ROS topic, <b>/move_base/feedback</b>, we were able to receive the Turtlebot's location during navigation 
      from the Turtlebot's own map of the arena. We also had a model map of the arena on the UI. We scaled and normalized the two maps in 
@@ -187,6 +195,7 @@ body, html {
     </p>
   </div>
   <hr>
+
   <p class="w3-center w3-large">DB/Scanning</p>
   <div style="padding:10px 10px; display:inline-block;">
   <p class="w3-quarter " style="margin:2%;  width:40%">
@@ -231,6 +240,30 @@ body, html {
   </p>
 
   </div>
+  <hr>
+  <p class="w3-center w3-large">User Interface</p>
+  <div style="padding:10px 10px; display:inline-block;">
+  <p class="w3-quarter " style="margin:2%;  width:40%">
+  Users interact with IAN using a simple, modern-looking UI on a Pi touchscreen. We created the UI using Qt, a free, open source, cross platform toolkit, and its Python bindings PyQt. 
+  We designed the UI using the QtDesigner tool and integrated the backend code with the other functionality of IAN (scanning, database retrieval, navigation) with several Python scripts.
+  We focused on usability - using a large sans serif font for readablity and symbols over words. 
+  We chose colours suitable for colourblind users, and included a help page and a call for help button. These steps ensure IAN is 
+  intuitive as possible for the elderly. <br><br>
+
+  You can interact with our UI on the right. 
+  </p>
+  <div class="w3-right"id="content" style="width:34%; border: 4px solid transparent;
+    border-color: black;
+    margin-right: 15%;
+    margin-top:2%;
+    border-image: url(border.png) 30 round;">
+  <iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FO0QYZAlf49yaGKKbMbsg6n%2FSDP-UI%3Fnode-id%3D6%253A5%26scaling%3Dscale-down" allowfullscreen></iframe>
+  </div>
+  </div>
+
+
+
+  
 
 
 </div>
@@ -290,73 +323,24 @@ the localization of the Turtlebot will not, as the same principles will be used 
   <h3 class="w3-center">Budget</h3>
   <p class="w3-center w3-large">System Costs</p>
   <p class="w3-center">The total cost of items borrowed in the making of the system is <b>£1502</b>. <br>
-  The breakdown of the costs is shown in by the following table and piechart.</p>
-  <table id="customers" style="width:30%; margin-left: auto;
-  margin-right: auto;">
-  <tr>
-    <th>Item</th>
-    <th>Estimated Cost (£)</th>
-  </tr>
-  <tr>
-    <td>Turtlebot WafflePi 3</td>
-    <td>1,300</td>
-  </tr>
-  <tr>
-    <td>Raspberry Pi 3 (x2)</td>
-    <td>35</td>
-  </tr>
-  <tr>
-    <td>Raspberry Pi 7” Touchscreen Display</td>
-    <td>30</td>
-  </tr>
-  <tr>
-    <td>Logitech C270 HD Webcam (x2)</td>
-    <td>26</td>
-  </tr>
-  <tr>
-    <td>Additional TB3 Waffle Plate-IPL-01 (8ea)</td>
-    <td>12</td>
-  </tr>
-  <tr>
-    <td>Emergency Stop Button</td>
-    <td>8</td>
-  </tr>
-   
-  <tr>
-    <td>Mock Seat Belt</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>Chair Frame (incl. Lego armrests and luggage compartments)</td>
-    <td>23</td>
-  </tr>
-  <tr>
-</table>
-<p class="w3-center">The total cost of externally purchased items is <b>£29.30</b>, and is broken down by the following table.</p>
-<table id="customers" style="width:30%; margin-left: auto;
-  margin-right: auto;">
-  <tr>
-    <th>Item</th>
-    <th>Estimated Cost (£)</th>
-  </tr>
-  <tr>
-    <td>Cable wire extensions</td>
-    <td>4</td>
-  </tr>
-  <tr>
-    <td>Long ribbon cable</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>Raspberry Pi Cooling Fan</td>
-    <td>14.30</td>
-  </tr>
-  <tr>
-    <td>Armrest Components (x2)</td>
-    <td>3</td>
-  </tr>
-  <tr>
-</table>
+  The breakdown of the borrowed items' costs is shown in by the following piechart.</p>
+  <img src="./figs/piechart.jpg" style="border: 4px solid transparent;
+  display: block;
+  text-align: center;
+  border-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  border-image: url(border.png) 30 round;
+  width: 54%;">
+<p class="w3-center" >Our externally purchased items' budget is £200. The total cost of our <br>externally purchased items is <b>£29.30</b>, and is broken down by the following piechart.</p>
+<img src="./figs/piechart2.jpg" style="border: 4px solid transparent;
+  display: block;
+  text-align: center;
+  border-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  border-image: url(border.png) 30 round;
+  width: 54%;">
 <p class="w3-center" style="width: 40%; margin-left: auto;
   margin-right: auto;">For our final demo, we planned on including a footrest for the passengers, 
 as well as focussing on aesthetics such as covering for the armrests, cushioning for the chair 
