@@ -113,7 +113,48 @@ body, html {
 <!-- Evaluation Section -->
 <div class="w3-container" style="padding:128px 16px; " id="evaluation">
   <h3 class="w3-center">Evaluation</h3>
-  <p class="w3-center w3-large">Key features of our system</p>
+  <p class="w3-center w3-large">Consistency in Travel Time</p>
+<div style="padding:40px 10px; display:inline-block;">
+    <p class="w3-quarter " style="margin:2%;  width:40%">
+  The real-world arena used for the Turtlebot consists of 10 destinations and the IAN hub. 
+  For each hub-to-point-of-interest journey, 20 tests were carried out to measure the time taken 
+  for the Turtlebot to travel (after receiving the command to move to the destination) from its hub to 
+  the specified destination. We then calculated the average of the travel times for each journey, 
+  and plotted the deviation of each test from its respective average journey time. From the analysis, we can deduce 
+  that most of the travel times for each journey deviate from their respective averages in the margin of 5%. 
+  Thus, we can conclude that the travel times, given the distances and their average journey times, for each journey are consistent. 
+  For passengers to trust our product in a real-world scenario, we need to ensure that it is reliable and capable of carrying them to their destination on time.
+  
+  </p>
+
+  <img class="w3-right" src="./figs/time_consistency.png" style="border: 4px solid transparent;
+    padding: 15px;
+    border-color: black;
+    border-image: url(border.png) 30 round;">
+   
+</div>
+
+<p class="w3-center w3-large">Consistency in Distance Travelled per Journey</p>
+<div style="padding:40px 10px;  display:inline-block;">
+<p class="w3-quarter " style="margin:2%;  width:40%; ">
+Another feature we wanted to evaluate was the accuracy of the Turtlebot's final position (coordinates given in the database) from the actual, tested 
+final position for each journey. For each hub-to-point-of-interest journey, 20 tests were carried out. When the turtlebot reached the destination, 
+we recorded its position and calculated the difference between the given coordinates and the actual coordinates. <b>Note that the distance the Turtlebot 
+traveled was between 1.5m to 5.5m</b>. During our navigation parameter tuning, we manually allowed the Turtlebot a tolerance of 25cm to reach the 
+destination (using the <i>xy_goal_tolerance</i> parameter), meaning that within a 25cm radius of the given coordinates the Turtlebot would stop and 
+assume it has reached its destination. Our measurements show that the <i>maximum difference in disparity we get is 5cm</i>, which we deem to be acceptable. 
+In a real-world scenario, our product will be scaled up meaning that these measurements will change. However, we estimate that the accuracy of 
+the localization of the Turtlebot will not, as the same principles will be used even if the distance travelled is larger.  
+
+</p>
+
+<img class="w3-right" src="./figs/distance_consistency.png" style="border: 4px solid transparent;
+  padding: 15px;
+  border-color: black;
+  border-image: url(border.png) 30 round;
+  width: 54%;">
+
+</div>
 </div>
 
 
