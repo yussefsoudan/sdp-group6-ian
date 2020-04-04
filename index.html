@@ -33,7 +33,7 @@ body, html {
 .bgimg-1 {
   background-position: center;
   background-size: cover;
-  background-image: url("./figs/cover2.jpg");
+  background-image: url("./figs/cover3.jpg");
   min-height: 100%;
 }
 
@@ -204,8 +204,8 @@ q {font-style: italic;}
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px; margin-top: 10% !important;">
-    <span class="w3-large" style=" font-size:1300% !important;">IAN</span><br>
+  <div class="w3-display-left w3-text-white" style="padding:48px; margin-top: 3% !important;">
+    <span class="w3-large" style=" font-size:2100% !important; margin-left: -4% ">IAN</span><br>
     <p class="w3-large" style="font-size:130% !important; margin-top: -20% !important;"><i>Your Interactive Airport Navigator</i>.</p>
     <p><a href="#system" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
   </div> 
@@ -220,16 +220,17 @@ q {font-style: italic;}
 
 
 <!-- NAVIGATION ANIMATION -->
-<div class="w3-container" style="padding:128px 16px; " id="system">
-
+<div class="w3-container" style="padding:0px 0px; margin: 0%;" id="howitworks">
+  
   <!-- Slideshow container -->
-  <div class="slideshow-container">
-
+  <div class="slideshow-container w3-container" style="padding: 15px; min-height: 700px; max-height: 700px;">
+    <h3 class="w3-center">How It Works</h3>
+  <p class="w3-center w3-large">Navigation</p>
     <!-- Full-width slides/quotes -->
     <div class="mySlides">
       
       <div style="padding:10px 10px; display:inline-block;">
-        <p class="w3-quarter " style="margin:2%;  width:40%">
+        <p class="w3-quarter w3-left" style="margin:2%;  width:30%; text-align: left;">
         <span class="w3-large"><b>1. Making a Map</b></span><br>
         The <b>SLAM</b> (<b>Simultaneous Localization and Mapping</b>) is a technique to draw a map by estimating the 
         current location in an arbitrary space. Using SLAM we can create a 2-D occupancy grid map (like a building floorplan) 
@@ -245,7 +246,7 @@ q {font-style: italic;}
     <div class="mySlides">
 
       <div style="padding:0px 10px; display:inline-block;">
-       <p class="w3-center" style="width: 60%; margin-left: auto; margin-right: auto;">
+       <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
         <span class="w3-large" ><b>2. Navigation with RViz</b></span><br>
         The goal of navigation is to move the robot from a location to a specified destination 
         in a given environment. For this purpose, a map that contains the geometric information of objects 
@@ -253,12 +254,14 @@ q {font-style: italic;}
         map was created with the distance information obtained by the sensor and the pose information of the Turtlebot itself.
         In this phase, we used RViz to: <br><br>
         
+        
         • <b>estimate the initial position</b>: for the Turtlebot to navigate autonomously inside the area of the given map, 
         the initial position of the Turtlebot must be given. This was done using the visual tool RViz by drawing an arrow in the map 
         to determine the orientation and position of the Turtlebot inside the environment.  <br><br>
+        
+        <p class="w3-right" style="width: 40%; margin-right: 10%; margin-top: 4%; text-align: left;">
         • <b>send the navigation goal</b>: similiar to the initial position estimate, RViz is used to draw an arrow in the map 
         to determine the goal position and orientation of the turtlebot. <br><br>
-    
         The Turtlebot will create a path to avoid obstacles to its destination based on the map and data from its sensor. 
         Then, the Turtlebot moves along the path. At this time, even if an obstacle is suddenly detected, 
         the Turtlebot moves to the target point avoiding the obstacle. 
@@ -271,7 +274,7 @@ q {font-style: italic;}
     <div class="mySlides">
       
       <div style="padding:0px 10px; display:inline-block;">
-        <p class="w3-center" style="width: 60%; margin-left: auto;  margin-right: auto;">
+        <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
         <span class="w3-large"><b>3. Parameter Tuning</b></span><br>
         Even though the Navigation functionality was working, it was not accurate. To alleviate that, we had to tune certain navigation parameters. 
         The job of navigation stack is to produce a safe path for the Turtlebot to execute, by processing data from odometry, 
@@ -281,6 +284,8 @@ q {font-style: italic;}
         • <b>sim_time</b>: the time allowed for the robot to examine each possible velocity value and pick the highest-scored trajectory. <br>
         • <b>path_distance_bias</b>: is the weight for how much the local planner should stay close to the global path. It makes 
         the navigation smoother as it is more attached to the global planner's path. <br>
+        </p>
+        <p class="w3-right" style="width: 40%; margin-right: 10%; margin-top: 4%; text-align: left;">
         • <b>yaw_goal_tolerance</b>: the tolerance in radians for the controller in rotation when achieving its goal. <br>
         • <b>xy_goal_tolerance</b>: the tolerance in meters for the controller in the x and y distances when achieving a goal. <br>
         • <b>max_vel_x, min_vel_x</b>: range of the velocity the robot can take. <br>
@@ -292,7 +297,7 @@ q {font-style: italic;}
 
     <div class="mySlides">
       <div style="padding:0px 10px; display:inline-block; ">
-        <p class="w3-center" style="width: 60%; margin-left: auto;  margin-right: auto;">
+        <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
         <span class="w3-large"><b>4. Navigation Scripting</b></span><br>
         We wanted to replace the functionality RViz was giving us, which was to publish the initial position as well as the destination <i>manually</i>. 
         The python scripts we have written use packages like <b>rospy, move_base_msgs.msg, actionlib, actionlib_msgs</b>, and <b>geometry_msgs</b> to manipulate 
@@ -300,7 +305,10 @@ q {font-style: italic;}
         The <b>actionlib</b> library allows us to create a client Node to the <b>MoveBaseAction</b> interface. Essentially, 
         the <b>MoveBaseAction</b> accepts goals from clients and attempts to move the Turtlebot to the specified position/orientation in the world. 
         Using the client node, we create a goal message and publish it to that interface, which is essentially commanding the Turtlebot 
-        to move towards that goal. With the same reasoning, we used the relevant interfaces to publish the initial position of the Turtlebot. 
+        to move towards that goal. 
+        </p>
+        <p class="w3-right" style="width: 40%; margin-right: 10%; margin-top: 3.7%; text-align: left;">
+        With the same reasoning, we used the relevant interfaces to publish the initial position of the Turtlebot. 
         For the pausing functionality, we are using the <b>MoveBaseAction</b> interface to cancel all the goals given to the turtlebot 
         and just resend the previous destination when the user resumes.
         <br><br>
@@ -316,7 +324,7 @@ q {font-style: italic;}
     <div class="mySlides">
 
       <div style="padding:0px 10px; display:inline-block; ">
-        <p class="w3-center" style="width: 60%; margin-left: auto;  margin-right: auto;">
+        <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
         <span class="w3-large"><b>5. Live Location Tracking</b></span><br>
          For the live-tracking feature, there were no already-existing packages that had such functionality, so this was manually 
          implemented by the team. Using the ROS topic, <b>/move_base/feedback</b>, we were able to receive the Turtlebot's location during navigation 
@@ -330,8 +338,8 @@ q {font-style: italic;}
 
 
     <!-- Next/prev buttons -->
-    <a class="prev" onclick="plusSlides(-1,'N')">&#10094;</a>
-    <a class="next" onclick="plusSlides(1,'N')">&#10095;</a>
+    <a class="prev" onclick="plusSlides(-1,'N')" style="margin-left: 2%;">&#10094;</a>
+    <a class="next" onclick="plusSlides(1,'N')" style="margin-right: 2%;">&#10095;</a>
   </div>
 
   <!-- Dots/bullets/indicators -->
@@ -346,15 +354,15 @@ q {font-style: italic;}
 
 
 <!-- SCANNING/DB ANIMATION -->
-<div class="w3-container" style="padding:128px 16px; " id="system">
+<div class="w3-container" style="padding:0px 0px; margin-top:0%;">
 
  <!-- Slideshow container -->
- <div class="slideshow-container">
-
+ <div class="slideshow-container" style="margin-top:0%; min-height: 500px; max-height: 500px; padding: 15px;">
+<p class="w3-center w3-large">DB/Scanning</p>
   <!-- Full-width slides/quotes -->
   <div class="mySlides-DB">
     <div style="padding:10px 10px; display:inline-block;">
-      <p class="w3-quarter " style="margin:2%;  width:40%">
+      <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
       <span class="w3-large"><b>1. Scanning Setup</b></span><br>
       We are using a Logitech Webcam to act as a barcode scanner. 
       The passenger can scan their boarding pass's barcode and the system will use 
@@ -376,7 +384,7 @@ q {font-style: italic;}
         width: 25%;
         border-color: black;
         border-image: url(border.png) 30 round;">
-      <p class="w3-quarter " style="margin:0%; margin-left: 15%;  width:40%">
+      <p class="w3-right" style="width: 40%; margin-right: 10%; margin-top: 5%; text-align: left;">
       <span class="w3-large"><b>2. The Database</b></span><br>
       The image on the left shows the final structure of our DB. Initially we had the DB on the User Pi 
       for easy access, but upon feedback from the SDP team, we later moved it to a different Pi (the Server Pi) to mimic the 
@@ -387,18 +395,13 @@ q {font-style: italic;}
 
   <div class="mySlides-DB">
     <div style="padding:10px 10px; display:inline-block;">
-      <p class="w3-center" style="width: 60%; margin-left: auto;  margin-right: auto;">
+      <p class="w3-left" style="width: 40%;   text-align: left;">
       <span class="w3-large"><b>3. User Pi and Server Pi Communication</b></span><br>
       The next step after the migration of the DB on the Server Pi was to establish a secure and reliable communication channel between the User Pi and the Server Pi 
       in order to perform the read and query operations. 
       </p>
-    </div>
-  </div>
-
-  <div class="mySlides-DB">
-    <div style="padding:10px 10px; display:inline-block;">
-    <p class="w3-center" style="width: 60%; margin-left: auto;  margin-right: auto;">
-      <span class="w3-large"><b>4. Live Updates</b></span><br>
+      <p class="w3-right" style="width: 40%;  margin-top: 0%; margin-right: 2%;text-align: left;">
+      <span class="w3-large w3-center" style="margin-left:auto; margin-right: auto;"><b>4. Live Updates</b></span><br>
       An important functionality of our product is to notify the user that a change has occurred to their flight.  
       To accomplish that, we have the Server Pi "listening" for any change in the records of the DB that concern the current user of the system. 
       If there is a change in their flight information, the Server Pi writes those changes to a file in the User Pi. Similar to the Server Pi, 
@@ -409,9 +412,10 @@ q {font-style: italic;}
   </div>
 
 
+
   <!-- Next/prev buttons -->
-  <a class="prev" onclick="plusSlides(-1,'D')">&#10094;</a>
-  <a class="next" onclick="plusSlides(1,'D')">&#10095;</a>
+  <a class="prev" onclick="plusSlides(-1,'D')" style="margin-left: 2%;">&#10094;</a>
+  <a class="next" onclick="plusSlides(1,'D')" style="margin-right: 2%;">&#10095;</a>
 </div>
 
   <!-- Dots/bullets/indicators -->
@@ -419,143 +423,16 @@ q {font-style: italic;}
     <span class="dot-DB" onclick="currentSlide(1,'D')"></span>
     <span class="dot-DB" onclick="currentSlide(2,'D')"></span>
     <span class="dot-DB" onclick="currentSlide(3,'D')"></span>
-    <span class="dot-DB" onclick="currentSlide(4,'D')"></span>
   </div> 
 
 </div>
 
 <!-- How It Works Section -->
- <div class="w3-container" style="padding:128px 16px; background-color: rgb(235,235,235)" id="howitworks">
-  <h3 class="w3-center">How It Works</h3>
-  <p class="w3-center w3-large">Navigation</p>
-  <div style="padding:10px 10px; display:inline-block;">
-  <p class="w3-quarter " style="margin:2%;  width:40%">
-  <span class="w3-large"><b>1. Making a Map</b></span><br>
-  The <b>SLAM</b> (<b>Simultaneous Localization and Mapping</b>) is a technique to draw a map by estimating the 
-  current location in an arbitrary space. Using SLAM we can create a 2-D occupancy grid map (like a building floorplan) 
-  from laser and pose data collected by a mobile robot. The result of this operation was the map used for navigation.
-  </p>
-  <img class="w3-right" src="./figs/rvis_map.png" style="border: 4px solid transparent;
-    margin-right: 20%;
-    border-color: black;
-    border-image: url(border.png) 30 round;">
-  </div>
-
-  <div style="padding:0px 10px; display:inline-block;">
-    <p class="w3-quarter " style="margin:2%;  width:40%">
-    <span class="w3-large"><b>2. Navigation with RViz</b></span><br>
-    The goal of navigation is to move the robot from a location to a specified destination 
-    in a given environment. For this purpose, a map that contains the geometric information of objects 
-    and walls of the given environment is required. As described earlier, using SLAM, the 
-    map was created with the distance information obtained by the sensor and the pose information of the Turtlebot itself.
-    In this phase, we used RViz to: <br><br>
-    
-    • <b>estimate the initial position</b>: for the Turtlebot to navigate autonomously inside the area of the given map, 
-    the initial position of the Turtlebot must be given. This was done using the visual tool RViz by drawing an arrow in the map 
-    to determine the orientation and position of the Turtlebot inside the environment.  <br><br>
-    • <b>send the navigation goal</b>: similiar to the initial position estimate, RViz is used to draw an arrow in the map 
-    to determine the goal position and orientation of the turtlebot. <br><br>
-
-    The Turtlebot will create a path to avoid obstacles to its destination based on the map and data from its sensor. 
-    Then, the Turtlebot moves along the path. At this time, even if an obstacle is suddenly detected, 
-    the Turtlebot moves to the target point avoiding the obstacle. 
-    
-    </p>
-
-    <p class="w3-quarter " style="margin:2%;  width:40%">
-    <span class="w3-large"><b>3. Parameter Tuning</b></span><br>
-    Even though the Navigation functionality was working, it was not accurate. To alleviate that, we had to tune certain navigation parameters. 
-    The job of navigation stack is to produce a safe path for the Turtlebot to execute, by processing data from odometry, 
-    sensors and the environment map. Maximizing the performance of this navigation stack requires some fine-tuning of parameters.
-    Tuned parameters include: <br><br>
-
-    • <b>sim_time</b>: the time allowed for the robot to examine each possible velocity value and pick the highest-scored trajectory. <br>
-    • <b>path_distance_bias</b>: is the weight for how much the local planner should stay close to the global path. It makes 
-    the navigation smoother as it is more attached to the global planner's path. <br>
-    • <b>yaw_goal_tolerance</b>: the tolerance in radians for the controller in rotation when achieving its goal. <br>
-    • <b>xy_goal_tolerance</b>: the tolerance in meters for the controller in the x and y distances when achieving a goal. <br>
-    • <b>max_vel_x, min_vel_x</b>: range of the velocity the robot can take. <br>
-    • <b>inflation_radius, cost_scaling_factor</b>: the two parameters control how far the robot aims to be from obstacles while it moves. The first controls 
-    how far away the zero cost point is from the obstacle. The second is inversely proportional to the cost of a cell.
-    </p>
-  </div>
-
-  <div style="padding:0px 10px; display:inline-block; ">
-  <p class="w3-quarter " style="margin:2%;  width:40%">
-  <span class="w3-large"><b>4. Navigation Scripting</b></span><br>
-  We wanted to replace the functionality RViz was giving us, which was to publish the initial position as well as the destination <i>manually</i>. 
-  The python scripts we have written use packages like <b>rospy, move_base_msgs.msg, actionlib, actionlib_msgs</b>, and <b>geometry_msgs</b> to manipulate 
-  the message types for publishing. These libraries give us access to the message parameters.
-  The <b>actionlib</b> library allows us to create a client Node to the <b>MoveBaseAction</b> interface. Essentially, 
-  the <b>MoveBaseAction</b> accepts goals from clients and attempts to move the Turtlebot to the specified position/orientation in the world. 
-  Using the client node, we create a goal message and publish it to that interface, which is essentially commanding the Turtlebot 
-  to move towards that goal. With the same reasoning, we used the relevant interfaces to publish the initial position of the Turtlebot. 
-  For the pausing functionality, we are using the <b>MoveBaseAction</b> interface to cancel all the goals given to the turtlebot 
-  and just resend the previous destination when the user resumes.
-  Since we have the navigation node running behind the scenes we do not need to write an external script for the robot to plan a 
-  route to the destination, avoid obstacles and in general plan its movements smartly. We took advantage of the <b>amcl</b> module 
-  that does that for us by just publishing the end goal and by allowing the module to do the rest (i.e. plan a route for the robot). 
-  The only thing the scripts have replaced is the need to use the visual tool RViz to pinpoint the initial position and the goal location/orientation.
-  </p>
-
-  <p class="w3-quarter " style="margin:2%;  width:40%">
-    <span class="w3-large"><b>5. Live Location Tracking</b></span><br>
-     For the live-tracking feature, there were no already-existing packages that had such functionality, so this was manually 
-     implemented by the team. Using the ROS topic, <b>/move_base/feedback</b>, we were able to receive the Turtlebot's location during navigation 
-     from the Turtlebot's own map of the arena. We also had a model map of the arena on the UI. We scaled and normalized the two maps in 
-     order to broadcast the Turtlebot's location onto the UI map.
-    </p>
-  </div>
-  <hr>
-
-  <p class="w3-center w3-large">DB/Scanning</p>
-  <div style="padding:10px 10px; display:inline-block;">
-  <p class="w3-quarter " style="margin:2%;  width:40%">
-  <span class="w3-large"><b>1. Scanning Setup</b></span><br>
-  We are using a Logitech Webcam to act as a barcode scanner. 
-  The passenger can scan their boarding pass's barcode and the system will use 
-  that to retrieve their flight information from the DB on the Server PI. 
-  We are using the <b>pyzbar</b> package to decode the bardcodes and use for the DB queries
-  </p>
-  <img class="w3-right" src="./figs/camera.png" style="border: 4px solid transparent;
-    margin-right: 20%;
-    width: 20%;
-    border-color: black;
-    border-image: url(border.png) 30 round;">
-  </div>
-  <div style="padding:10px 10px; display:inline-block;">
-  <img class="w3-left" src="./figs/db.jpg" style="border: 4px solid transparent;
-    margin-left: 6%;
-    width: 25%;
-    border-color: black;
-    border-image: url(border.png) 30 round;">
-  <p class="w3-quarter " style="margin:0%; margin-left: 15%;  width:40%">
-  <span class="w3-large"><b>2. The Database</b></span><br>
-  The image on the left shows the final structure of our DB. Initially we had the DB on the User Pi 
-  for easy access, but upon feedback from the SDP team, we later moved it to a different Pi (the Server Pi) to mimic the 
-  real-world situation where the DB would live on a remote server.
-  </p>
-  </div>
-  <div style="padding:10px 10px; display:inline-block;">
-  <p class="w3-quarter " style="margin:2%;  width:40%">
-  <span class="w3-large"><b>3. User Pi and Server Pi Communication</b></span><br>
-  The next step after the migration of the DB on the Server Pi was to establish a secure and reliable communication channel between the User Pi and the Server Pi 
-  in order to perform the read and query operations. 
-  </p>
-  <p class="w3-quarter " style="margin:2%;  width:40%">
-  <span class="w3-large"><b>4. Live Updates</b></span><br>
-  An important functionality of our product is to notify the user that a change has occurred to their flight.  
-  To accomplish that, we have the Server Pi "listening" for any change in the records of the DB that concern the current user of the system. 
-  If there is a change in their flight information, the Server Pi writes those changes to a file in the User Pi. Similar to the Server Pi, 
-  the User Pi is "listening" for a modification in that file. As soon as it detects that the file has been modified, it updates the current user
-   using a pop-up window in the UI.
-  </p>
-
-  </div>
-  <hr>
+ <div class="w3-container" style="padding:50px 16px; background-color: rgb(235,235,235)" id="howitworks">
+  
   <p class="w3-center w3-large">User Interface</p>
   <div style="padding:10px 10px; display:inline-block;">
-  <p class="w3-quarter " style="margin:2%;  width:40%">
+  <p class="w3-quarter " style="margin:2%;  margin-top: 7%; width:40%">
   Users interact with IAN using a simple, modern-looking UI on a Pi touchscreen. We created the UI using Qt, a free, open source, cross platform toolkit, and its Python bindings PyQt. 
   We designed the UI using the QtDesigner tool and integrated the backend code with the other functionality of IAN (scanning, database retrieval, navigation) with several Python scripts.
   We focused on usability - using a large sans serif font for readablity and symbols over words. 
@@ -564,13 +441,12 @@ q {font-style: italic;}
 
   You can interact with our UI on the right. 
   </p>
-  <div class="w3-right"id="content" style="width:34%; border: 4px solid transparent;
-    border-color: black;
+  <div class="w3-right"id="content" style="width:40%; height: 40% !important; 
+    
     margin-right: 15%;
-    margin-top:2%;
-    border-image: url(border.png) 30 round;">
-  <iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FO0QYZAlf49yaGKKbMbsg6n%2FSDP-UI%3Fnode-id%3D6%253A5%26scaling%3Dscale-down" allowfullscreen></iframe>
-  </div>
+    margin-top:0%;">
+<iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fz0FUcKmddMIAAIWo7wBAEz%2FIanUi%3Fembed_host%3Dshare%26scaling%3Dcontain%26node-id%3D1%253A23" allowfullscreen></iframe>
+</div>
   </div>
 
 </div> 
