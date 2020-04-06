@@ -1133,15 +1133,11 @@ $('.slideshow-text').slick({
   swipe: false,
   vertical: true,
   arrows: false,
-  infinite: true,
+  infinite: false,
   speed: 900,
   cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
 });
 
-
-$("#learnmore").click(function() {
-  $('.slideshow').slick({dots: false})
-});
 
 // Fade in content
 var features_div=$("#features");
@@ -1153,12 +1149,22 @@ $(window).scroll(function () {
             //---------------------
 
 //Enter the band you want the div to be displayed
-            if ((windowpos >= 380)){ 
-              features_div.addClass("AfterScroll");
-            }
-            if ((windowpos >= 1310)){ 
-              market_div.addClass("AfterScroll");
-            }
+            // if ((windowpos >= 380)){ 
+            //   features_div.addClass("AfterScroll");
+            // }
+            // if ((windowpos >= 1310)){ 
+            //   market_div.addClass("AfterScroll");
+            // }
+
+            if ((windowpos >= 200)){ 
+                $(".slideshow .slick-dots").hide();
+                console.log("remove dots")
+              }
+            if ((windowpos<200)){
+              $(".slideshow .slick-dots").show();
+                console.log("add dots")
+
+              }
 });
 
 
