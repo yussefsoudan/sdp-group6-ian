@@ -49,7 +49,8 @@ body, html {
 .bgimg-1 {
   background-position: center;
   background-size: cover;
-  background-image: url("./figs/cover5.jpg");
+  background-image: url("./figs/cover6.jpg");
+  /*background-color: #ebebeb;*/
   min-height: 100%;
 }
 
@@ -190,7 +191,8 @@ q {font-style: italic;}
 html {
   height: 100%;
   background: #110101;
-  font-family: 'Roboto', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weifht: 40;
   overflow: hidden;
 } */
 
@@ -214,6 +216,7 @@ html {
 .slideshow .slider .item {
   height: 100vh;
   width: 100vw;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif !important; font-weight: 40 !important;
   position: relative;
   overflow: hidden;
   border: none;
@@ -242,7 +245,7 @@ html {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   left: auto;
-  color: #fff;
+  color: black;
   display: block;
 }
 .slideshow .slick-dots li {
@@ -258,8 +261,8 @@ html {
 }
 .slideshow .slick-dots li button:before {
   content: '';
-  background: #fff;
-  color: #fff;
+  background: black;
+  color: black;
   height: 2px;
   width: 20px;
   border-radius: 0;
@@ -294,17 +297,149 @@ html {
   width: 100vw;
   text-align: center;
   color:white;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 100;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 40;
   pointer-events: none;
-  text-transform: uppercase;
   letter-spacing: 20px;
-  line-height: 0.8;
+  line-height: 2;
 }
 @media (max-width: 767px) {
   .slideshow-text {
     font-size: 40px;
   }
+}
+
+/* Face In Content */
+.BeforeScroll
+{
+  height: 100px; /*Whatever you want*/
+  width: 100%; /*Whatever you want*/
+  display: none;
+}
+
+
+/*Use this class when you want your content to be shown after some scroll*/
+.AfterScroll
+{
+  height: 100px; /*Whatever you want*/
+  width: 100%; /*Whatever you want*/
+  display: block;
+  animation: fadeEffect 5s; /* fading effect takes 3s */
+}
+
+@keyframes fadeEffect { /* from 0 to full opacity */
+   from {opacity: 0;}
+   to {opacity: 1;}
+}
+
+/* ACCORDION - DROP DOWN LIST */
+/**
+ * Required CSS 
+ */
+ .accordion__title {
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+
+.accordion__icon {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+}
+
+.accordion__icon .line-01,
+.accordion__icon .line-02 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  background-color: #272343;
+  transition: 0.3s;
+}
+
+.accordion__icon .line-02 {
+  transform: rotate(90deg);
+}
+
+.accordion__content {
+  display: none;
+}
+
+.accordion--open .line-02 {
+  transform: rotate(0deg);
+}
+/* end Required CSS */
+
+/**
+ * Now let's make it look pretty! 
+ */
+/* body {
+  font-family: "Rubik", sans-serif;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 40px 5%;
+  color: #111;
+  overflow-y: scroll;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 40px;
+} */
+
+.accordion {
+  margin-top: -1px;
+  /* border-top: 1px solid #272343; */
+  /* border-bottom: 1px solid #272343; */
+  /* content: ""; /* This is necessary for the pseudo element to work. */ 
+  /* display: block; This will put the pseudo element on its own line. */
+    /* margin: 0 auto; This will center the border. */
+  /* width: 80%; Change this to whatever width you want. */
+  /* padding-top: 20px; This creates some space between the element and the border. */ */
+    /* border-bottom: 1px solid black; This creates the border. Replace black with whatever color you want. */
+}
+
+.accordion__title {
+  padding: 20px 16px;
+  font-size: 16px;
+  transition: 0.2s;
+  border-bottom: 1px solid #272343;
+  content: ""; /* This is necessary for the pseudo element to work. */ 
+  display: block; /*This will put the pseudo element on its own line. */
+  /* margin: 0 auto; This will center the border. */
+  width: 50%; /*Change this to whatever width you want. */
+  padding-top: 20px; /*This creates some space between the element and the border. * */
+}
+
+.accordion__content {
+  padding: 24px 16px 16px;
+}
+
+.accordion__content p {
+  margin: 0 0 16px;
+}
+
+.accordion__title:hover {
+  background-color: #433d6f;
+  color: #fff;
+}
+
+.accordion__title:hover .line-01,
+.accordion__title:hover .line-02 {
+  background-color: #fff;
+}
+
+.accordion--open .accordion__title {
+  background-color: #272343;
+  color: #fff;
+}
+
+.accordion--open .line-01,
+.accordion--open .line-02 {
+  background-color: #fff;
 }
 
 
@@ -344,23 +479,17 @@ html {
 </nav>
 
 <!-- Header with full-height image -->
-<!-- <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px; margin-top: 3% !important;">
-    <span class="w3-large" style=" font-size:2100% !important; margin-left: -4% ">IAN</span><br>
-    <p class="w3-large" style="font-size:130% !important; margin-top: -20% !important;"><i>Your Interactive Airport Navigator</i>.</p>
-    <p><a href="#system" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
-  </div> 
-  
-</header> -->
+
+ 
 
 <!-- VERTICAL SLIDESHOW -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home"></header>
-<div class="w3-container" style="padding:128px 16px; " id="system">
+<div class="w3-container" style="padding:20px 16px; " >
     <div class="slideshow">
       <div class="slider">
         <div class="item">
-          <div class="introductionText" style="margin-top: 25%;margin-left: 20%;font-size: 60px;">
-              <p>IAN, Interactive Airport Navigator</p>
+          <div class="introductionText" style="z-index: 3; margin-top: 20%;margin-left: 30%;font-size: 40px;width: 40%;text-align: center;">
+              <p>Your <i>Interactive Airport Navigator</i></p>
           </div>
         </div>
         <div class="item">
@@ -372,19 +501,19 @@ html {
         <div class="item">
           <div class="introductionText"  style="margin-top: 20%;margin-left: 25%;font-size: 35px;width: 50%;text-align: center;">
                While there exists several assistant airport robots on the market, none of them thus far caters for the 
-               two aforementioned issues that the elderly face
+               two aforementioned issues that the elderly, primarily, face.
           </div>
         </div>
         <div class="item">
           <div class="introductionText" style="margin-top: 20%;margin-left: 25%;font-size: 35px;width: 50%;text-align: center;">
-            IAN combines autonomous navigation with a chair and will assist travellers in reaching points of interest.
+            IAN combines autonomous navigation with a chair to assist travellers in reaching points of interest throughout the airport.
           </div>
           <p><a href="#system" style="margin-top: 20%;margin-left: 45%; " class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
         </div>
       </div>
     </div>
     <div class="slideshow-text">
-      <div class="item">Welcome</div>
+      <div class="item">IAN</div>
       <div class="item">Problem</div>
       <div class="item">Market Gap</div>
       <div class="item">Solution</div>
@@ -394,10 +523,117 @@ html {
 
 
 <!-- System Section -->
-<div class="w3-container" style="padding:128px 16px; " id="system">
+<div class="w3-container" style="padding:128px 16px; border: 4px solid;border-color: black;" id="system">
   <h3 class="w3-center">System</h3>
-  <p class="w3-center w3-large">System Costs</p>
+
+
+  <!-- ACCORDION - DROP DOWN LIST  -->
+      <!-- <h1>jQuery Accordions</h1> -->
+
+    <div class="accordion">
+      <h4 class="accordion__title">
+        Accordion Title 01
+        <i class="accordion__icon">
+          <div class="line-01"></div>
+          <div class="line-02"></div>
+        </i>
+      </h4><!-- end .accordion__title -->
+      <div class="accordion__content">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.</p>
+        <p>Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper
+          suscipit, posuere a, pede.</p>
+      </div><!-- end .accordion__content -->
+    </div><!-- end .accordion 01 -->
+
+    <div class="accordion">
+      <h4 class="accordion__title">
+        Accordion Title 02
+        <i class="accordion__icon">
+          <div class="line-01"></div>
+          <div class="line-02"></div>
+        </i>
+      </h4><!-- end .accordion__title -->
+      <div class="accordion__content">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.</p>
+        <p>Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper
+          suscipit, posuere a, pede.</p>
+      </div><!-- end .accordion__content -->
+    </div><!-- end .accordion 02 -->
+
+    <div class="accordion">
+      <h4 class="accordion__title">
+        Accordion Title 03
+        <i class="accordion__icon">
+          <div class="line-01"></div>
+          <div class="line-02"></div>
+        </i>
+      </h4><!-- end .accordion__title -->
+      <div class="accordion__content">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.</p>
+        <p>Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper
+          suscipit, posuere a, pede.</p>
+      </div><!-- end .accordion__content -->
+    </div><!-- end .accordion 03 -->
+
+    <div class="accordion">
+      <h4 class="accordion__title">
+        Accordion Title 04
+        <i class="accordion__icon">
+          <div class="line-01"></div>
+          <div class="line-02"></div>
+        </i>
+      </h4><!-- end .accordion__title -->
+      <div class="accordion__content">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.</p>
+        <p>Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper
+          suscipit, posuere a, pede.</p>
+      </div><!-- end .accordion__content -->
+    </div><!-- end .accordion 04 -->
+
+  <!-- <div id = "features" class = "BeforeScroll" style="padding:20px 10px;">
+    <p class="w3-left" style="width: 40%; margin-left: 10%; text-align: left;">
+      <span class="w3-large"><b> Autonomous Navigation</b></span><br>
+      <span class="w3-large"><b>Intuitive User Interface</b></span><br>
+
+      <span class="w3-large"><b>Flight Information Live Update</b></span><br>
+    </p>
+      <img class="w3-right" src="./figs/IANPoster.png" style="border: 4px solid transparent;
+        margin-right: 10%;
+        width: 40%;
+        border-color: black;
+        border-image: url(border.png) 30 round;">
+  </div> -->
+
 </div>
+
+<!-- <div class="w3-container" style="padding:128px 16px;border: 4px solid;border-color: black; " id="Market">
+
+  <div id = "marketResearch" class = "BeforeScroll" style="padding:20px 10px;">
+    <p class="w3-center" >
+     
+        <span class="w3-large"><b>Market Research</b></span><br>
+        EU Regulation [1107/2006] states that support given by airports and airlines to disabled people traveling
+        must be free. Each airport calculates a passenger with reduced mobility (PRM) charge which is included in
+        the airport tax and then added to the total cost of every ticket airlines sell. Note that, 
+        requests for assistance have been growing at a pace of 12 percent year on year. In simpler words, if the 
+        PRM charge is not increased every year, there is less money to assist more passengers.
+        <br><br>
+        On average, all UK airports charge a fee of 85 Pence to 1 Pound on all passengers using the airport.In 2018,
+        more than 292M passengers flew in/out of the UK [Aviation statistics: data tables (AVI)] costing 
+        between £43.8m - £87.6m in added air tax for special assistance arrangements.
+        <br><br>
+        Our product can reduce those costs [ argument on how ]. Reduced RPM charge will attract more airlines for
+        the airport and consequently more travelers, increasing at the same time the profits of the airport, minimizing
+        time and resources allocated to special assistance.[ this need fixing ]
+    </p>
+
+  </div>
+
+    
+       
+</div> -->
+
+
 
 
 <!-- NAVIGATION ANIMATION -->
@@ -626,7 +862,9 @@ html {
     
     margin-right: 15%;
     margin-top:0%;">
+
 <!-- <iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fz0FUcKmddMIAAIWo7wBAEz%2FIanUi%3Fembed_host%3Dshare%26scaling%3Dcontain%26node-id%3D1%253A23" allowfullscreen></iframe> -->
+
 </div>
   </div>
 
@@ -896,6 +1134,45 @@ $('.slideshow-text').slick({
   speed: 900,
   cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
 });
+
+
+// Fade in content
+var features_div=$("#features");
+var market_div=$("#marketResearch");
+$(window).scroll(function () {
+            var windowpos = $(window).scrollTop();
+            //---check the console to acurately see what the positions you need---
+            console.log(windowpos);
+            //---------------------
+
+//Enter the band you want the div to be displayed
+            if ((windowpos >= 380)){ 
+              features_div.addClass("AfterScroll");
+            }
+            if ((windowpos >= 1310)){ 
+              market_div.addClass("AfterScroll");
+            }
+});
+
+// ACCORDION - DROP DOWN LIST
+// When any accordion title is clicked...
+$(".accordion__title").click(function() {
+  const $accordion_wrapper = $(this).parent();
+  const $accordion_content = $(this).parent().find(".accordion__content");
+  const $accordion_open = "accordion--open";
+
+  // If this accordion is already open
+  if ($accordion_wrapper.hasClass($accordion_open)) {
+    $accordion_content.slideUp();                     // Close the content.
+    $accordion_wrapper.removeClass($accordion_open);  // Remove the accordionm--open class.
+  }
+  // If this accordion is not already open
+  else {
+    $accordion_content.slideDown();                 // Show this accordion's content.
+    $accordion_wrapper.addClass($accordion_open);   // Add the accordion--open class.
+  }
+});
+
 
 
 </script>
