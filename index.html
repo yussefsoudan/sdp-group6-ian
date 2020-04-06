@@ -510,7 +510,7 @@ h1 {
           <div class="introductionText" style="margin-top: 20%;margin-left: 25%;font-size: 35px;width: 50%;text-align: center;">
             IAN combines autonomous navigation with a chair to assist travellers in reaching points of interest throughout the airport.
           </div>
-          <p><a href="#system" style="margin-top: 20%;margin-left: 45%; " class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
+          <p><a href="#system" style="margin-top: 20%;margin-left: 45%; " id="learnmore"class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
         </div>
       </div>
     </div>
@@ -1138,6 +1138,10 @@ $('.slideshow-text').slick({
 });
 
 
+$("#learnmore").click(function() {
+  $('.slideshow').slick({dots: false})
+});
+
 // Fade in content
 var features_div=$("#features");
 var market_div=$("#marketResearch");
@@ -1155,6 +1159,7 @@ $(window).scroll(function () {
               market_div.addClass("AfterScroll");
             }
 });
+
 
 // ACCORDION - DROP DOWN LIST
 // When any accordion title is clicked...
