@@ -974,7 +974,23 @@ h1 {
     </p>
     </div>
   </div>
-
+  
+  <div class="mySlides-DB">
+    <div style="padding:10px 10px; display:inline-block;">
+      <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
+      <span class="w3-large"><b>5. Challenges</b></span><br>
+      A particular challenge faced by the DB/Scanning team was getting the User Pi and the Server Pi to 
+      communicate harmoniously in order to provide the user with live updates when the user's flight information change.
+      The arrangement for the communication, initially, was TCP using sockets. The problem with here is that the network the two Pi's would 
+      communicate over was supported by multiple routers. As such, the TCP socket communication, in particular, would work at times and wouldn't work at other times depending on
+      the location of the two Pi's in the room. <br>
+      Because of this unpredictability, we found another method that is not disturbed by the multi-router setup for communication. The method involved 
+      sharing the SSH-keys of the Pi's with each other and communicating by the means of SSH sessions. 
+      For example, when the User Pi scans the boarding pass, it would SSH into the Server Pi with the flight and user id's, to run a script that 
+      constantly scans for changes to the user flight.
+      </p>
+    </div>
+  </div>
 
 
   <!-- Next/prev buttons -->
@@ -987,6 +1003,7 @@ h1 {
     <span class="dot-DB" onclick="currentSlide(1,'D')"></span>
     <span class="dot-DB" onclick="currentSlide(2,'D')"></span>
     <span class="dot-DB" onclick="currentSlide(3,'D')"></span>
+    <span class="dot-DB" onclick="currentSlide(4,'D')"></span>
   </div> 
 
 </div>
