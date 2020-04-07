@@ -983,7 +983,8 @@ h1 {
       communicate harmoniously in order to provide the user with live updates when the user's flight information change.
       The arrangement for the communication, initially, was TCP using sockets. The problem with here is that the network the two Pi's would 
       communicate over was supported by multiple routers. As such, the TCP socket communication, in particular, would work at times and wouldn't work at other times depending on
-      the location of the two Pi's in the room. <br>
+      the location of the two Pi's in the room. </p>
+      <p class="w3-right" style="width: 40%; margin-right: 5%; text-align: left; margin-top: 3.5%;">
       Because of this unpredictability, we found another method that is not disturbed by the multi-router setup for communication. The method involved 
       sharing the SSH-keys of the Pi's with each other and communicating by the means of SSH sessions. 
       For example, when the User Pi scans the boarding pass, it would SSH into the Server Pi with the flight and user id's, to run a script that 
