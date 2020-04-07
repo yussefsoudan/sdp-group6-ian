@@ -1243,20 +1243,26 @@ cost an additional £20 - £25.
   <img src="./figs/management.png" style="display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;"> <br>
+  width: 50%;"> <br><br>
 
-  <p class="w3-center w3-large">Sprints & Accomplished Milestones</p> <br>
+  <p class="w3-center w3-large" >Sprints & Accomplished Milestones</p> <br>
   <table id="customers" style="width: 70%; margin-left: 15%;">
   <tr>
     <th>Sprint 1 Milestones</th>
     <th>Team</th>
   </tr>
   <tr>
-    <td>The physical environment for the robot is set up.</td>
+    <td>The physical environment for the robot is set up, and the Turtlebot can be moved <i>manually</i>. <br>
+    &nbsp; • Made a map of the environment using SLAM. <br>
+    &nbsp; • Could move the Turtlebot using RViz manually by pointing to a destination. <br>
+    </td>
     <td>Navigation, Appearance</td>
   </tr>
   <tr>
-    <td>The robot can scan a boarding pass in the form of a QR code.</td>
+    <td>The robot can scan a boarding pass in the form of a QR/Barcode code.<br>
+        &nbsp; • Built and populated an early version of the DB locally. <br>
+        &nbsp; • Obtained a camera that is able to auto-focus on the codes.
+    </td>
     <td>DB/Scanning</td>
   </tr>
   <tr>
@@ -1264,27 +1270,30 @@ cost an additional £20 - £25.
     <th>Team</th>
   </tr>
   <tr>
-    <td>The robot can move from any point in the airport to a predefined point, such as a gate.</td>
-    <td>Navigation</td>
-  </tr>
-  <tr>
-    <td>The robot can return to its starting position after it has reached the gate.</td>
-    <td>Navigation</td>
-  </tr>
-  <tr>
-    <td>The robot avoids static <i>smoothly</i> obstacles while moving.</td>
-    <td>Navigation</td>
-  </tr>
-  <tr>
-    <td>The database/server for flight information is set up.</td>
-    <td>DB/Scanning</td>
-  </tr>
-  <tr>
-    <td>The user can interact with the robot using an interface (UI) on a display screen.</td>
+    <td>The user can interact with the robot using an interface (UI) on a display screen.<br>
+      &nbsp; • A screen is installed and the user interface is created. <br>
+      &nbsp; • The UI is integrated with the navigation functionalities. <br>
+    </td>
     <td>UI</td>
   </tr>
   <tr>
-    <td>The foundations of the user seat are built (i.e. the frame).</td>
+    <td>The robot can move from any point in the airport to a predefined point, such as a gate, automatically.<br>
+      &nbsp; • Coordinates of destinations in the map are stored on the DB. <br>
+      &nbsp; • Could move the Turtlebot automatically to a destination by running a Python script. <br>
+      &nbsp; • By clicking a button on the UI, the Turtlebot can move to a pre-defined destination on the map. <br>
+    </td>
+    <td>Navigation, UI, DB/Scanning</td>
+  </tr>
+  <tr>
+    <td>The robot avoids static <i>smoothly</i> obstacles while moving. <br>
+      &nbsp; • Changed the navigation parameters for the obstacle avoidance to be more smooth. <br>
+    </td>
+    <td>Navigation</td>
+  </tr>
+  <tr>
+    <td>The foundations of the user seat are built (i.e. the frame).<br>
+    &nbsp; • The foundation of the seat is built using wood and metal frames. <br>
+    </td>
     <td>Appearance</td>
   </tr>
   <tr>
@@ -1292,44 +1301,57 @@ cost an additional £20 - £25.
     <th>Team</th>
   </tr>
   <tr>
-    <td>The robot can take the user to restaurants, toilets and other points of interest.</td>
-    <td>Navigation, Appearance</td>
+    <td>The robot can take the user to restaurants, toilets and other points of interest.<br>
+    &nbsp; • More destinations are added to the map, stored on the DB and integrated with the UI. <br>
+    </td>
+    <td>Navigation, UI, DB/Scanning</td>
   </tr>
   <tr>
-    <td>The robot can retrieve real-time informationfrom the database, such as flight number, gate/terminal and flight status.</td>
-    <td>DB/Scanning, UI</td>
+    <td>The UI is further enhanced for increased accessibility. <br>
+    &nbsp; • Text sizes are revised to accomodate for the target group. <br> 
+    &nbsp; • Colours are revised to accomodate for colour-blind users in the red-green spectrum. <br> 
+    </td>
+    <td>UI</td>
   </tr>
   <tr>
-    <td>The database is set up on a remote server.</td>
+    <td>The database is set up on a remote server. <br>
+    &nbsp; • The database is setup on the 'Server Pi' to imitate an airport server. <br> 
+    </td>
     <td>DB/Scanning</td>
   </tr>
   <tr>
-    <td>The seat has an armrest and a seat belt.</td>
+    <td>The user can receive live updates on their flight status. <br>
+    &nbsp; • When any of the user's flight information is altered on the DB, the user recieves a pop-up on the UI. <br> 
+    </td>
+    <td>DB/Scanning, UI</td>
+  </tr>
+  <tr>
+    <td>The user can pause the navigation process via the screen.</td>
+    <td>Navigation, UI</td>
+  </tr>
+  <tr>
+    <td>The user can see a live, dynamic map which tracks their position on the airport’s map. <br>
+    &nbsp; • The live-tracking feed shows the user's, and hence IAN's, position on the map as it <br>
+    &nbsp; &nbsp; changes as well as their chosen destination on the map. <br> 
+    </td>
+    <td>Navigation, UI</td>
+  </tr>
+  <tr>
+    <td>The seat has an armrest and a seat belt. </td>
     <td>Appearance</td>
-  </tr>
-  <tr>
-    <td>The seat has an armrest and a seat belt.</td>
-    <td>Appearance</td>
-  </tr>
-  <tr>
-    <td>The user can pause the robot’s navigation from the screen.</td>
-    <td>Navigation, UI</td>
-  </tr>
-  <tr>
-    <td>The user can see a live-feed which tracks their position on the airport’s map.</td>
-    <td>Navigation, UI</td>
-  </tr>
-  <tr>
-    <td>Research the scalability of the navigation and the database.</td>
-    <td>Navigation, DB/Scanning</td>
-  </tr>
-  <tr>
-    <td>The user can see the estimated time for some destinations on the screen.</td>
-    <td>Navigation, UI</td>
   </tr>
 
-  
-  
+  <tr>
+    <td>Research the scalability of the navigation and the database. <br>
+    &nbsp; • The navigation team researched other navigation algorithms suitable for <br>
+    &nbsp; &nbsp; the current hardware to make for safer and more efficient journeys. <br>
+
+    &nbsp; • The DB/Scanning team researched other methods for server-client communication<br>
+    &nbsp; &nbsp; for enhanced security, such as TCP sockets. <br>
+    </td>
+    <td>Navigation, DB/Scanning</td>
+  </tr>
+
   
 </table>
 
