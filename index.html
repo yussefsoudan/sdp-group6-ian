@@ -656,12 +656,26 @@ h1 {
         </i>
       </h4><!-- end .accordion__title -->
       <div class="accordion__content" style="width: 70%;">
-        <span class="w3-large"><b> Voice Commands & Text-to-Speech</b></span><br>
-        <p>While designed with the elderly in mind, our product range could be expanded 
-        to provide assistive services to other groups. One of our main future goals is to 
-        make airports more comfortable for those who are visually impaired. With some modifications, 
-        we plan to adapt the current product to include voice accessibility and screen reading such 
-        that those who have sight difficulties would have a similar level of accessibility to IAN.</p> 
+        <span class="w3-large"><b> Navigation Enhancements</b></span><br>
+        <p>During our scalability research we came across a more efficient Navigation algorithm, 
+        which will allow our robot to navigate obstacles in a safer, more realistic way – given a sufficient amount of time and resources. 
+        Our research suggests that 
+        <a target="_blank" href="https://www.researchgate.net/publication/322447662_Generalized_Voronoi_Diagram_application_to_Turtlebot_Navigation_in_ROS">Generalized Voronoi Diagrams (GVD) could be applied to Turtlebot navigation in ROS</a>. 
+        Without going into technical details, this research concluded that the current implementation, using Dijkstra’s method, might force 
+        the robot to abort if an obstacle were to appear when the robot was turning, whereas the GVD algorithm would plan a safe 
+        route around it. This research is particularly relevant to our system since airports have many corridors, and thus IAN would 
+        have to make turns frequently.</p> 
+
+        <span class="w3-large"><b> Navigating Multiple Floors</b></span><br>
+        <p>A potential further development of IAN is to navigate buildings with multiple floors. 
+        Multiple airports host restaurants and shops on different building floors than the departure gates. 
+        One way to do this is to incorporate IAN's functionalities with Airport lifts, although this would require further research. </p>
+
+        <span class="w3-large"><b> Market Transferability</b></span><br>
+        <p>As of now, our primary customers are airports. However, IAN can easily be adapted to satisfy 
+        different market segments. From insurance companies that provide services to injured workers to 
+        firms that want to make their offices accessible to their disabled employees. We can vouch that 
+        IAN has the potential to fulfill all requests of special assistance in a building environment. </p>
 
         <span class="w3-large"><b> Multiple Languages</b></span><br>
         <p>Available only in English now, one of the next steps we intend to take is to make our product 
