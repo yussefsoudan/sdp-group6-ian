@@ -1052,45 +1052,127 @@ h1 {
 <!-- Evaluation Section -->
 <div class="w3-container" style="padding:128px 16px; " id="eval">
   <h3 class="w3-center">Evaluation</h3>
+
+
+  <div style="padding:40px 10px; display:inline-block;">
+  <p class="w3-center " style="margin-left: auto; margin-right: auto;  width:40%">
+  One of the very first functionalities we had to evaluate and 
+  constantly improve was the Navigation. The robot's feature to autonomously-navigate played 
+  the most significant role in our product and it was under constant re-evaluation throughout the sprints to 
+  ensure that it was continuously improving. 
+  </p>
+  </div>
+
+  <p class="w3-center w3-large">Basic Navigation Functionalities</p>
+  <div style="padding:40px 10px; display:inline-block; margin-left: 2%;" >
+    <p class="w3-quarter " style="margin:2%;  width:40%">
+    <span class="w3-large"><b>1. Test Purpose</b></span><br>
+      We needed to bring the navigation functionality to an acceptable stage 
+      in order to be formally evaluated against our product set standards.
+    </p>
+
+    <p class="w3-quarter w3-left" style="margin:2%;  width:40%; margin-left: 5%;">
+    <span class="w3-large"><b>3. Test Results</b></span><br>
+      After a lot of experimentation and informal evaluation of the navigation behavior, 
+      the team established a combination of parameters that would provide the optimal navigation behavior at the time.
+    </p>
+
+    <p class="w3-quarter w3-left" style="margin:2%;  width:40%">
+    <span class="w3-large"><b>2. Test Procedure</b></span><br>
+      Initially, even though the Turtlebot's navigation was functional,
+       we noticed that the planning and movement of the robot were inaccurate. 
+       The robot failed to reach its given destination, kept hitting the walls and obstacles even though 
+       they were clearly shown on the sensor map, went past the goals without stopping or was unable to assume the instructed orientation. 
+       For us to overcome these issues, the Navigation team had to constantly experiment with the Navigation Parameters (see the "How it Works" section). 
+       With each tuning, we informally evaluated the performance of the navigation and repeated the process.
+    </p>
+
+    
+
+
+  </div>
+
+
   <p class="w3-center w3-large">Consistency in Travel Time</p>
 <div style="padding:40px 10px; display:inline-block;">
-    <p class="w3-quarter " style="margin:2%;  width:40%">
-  The real-world arena used for the Turtlebot consists of 10 destinations and the IAN hub. 
-  For each hub-to-point-of-interest journey, 20 tests were carried out to measure the time taken 
-  for the Turtlebot to travel (after receiving the command to move to the destination) from its hub to 
-  the specified destination. We then calculated the average of the travel times for each journey, 
-  and plotted the deviation of each test from its respective average journey time. From the analysis, we can deduce 
-  that most of the travel times for each journey deviate from their respective averages in the margin of 5%. 
-  Thus, we can conclude that the travel times, given the distances and their average journey times, for each journey are consistent. 
-  For passengers to trust our product in a real-world scenario, we need to ensure that it is reliable and capable of carrying them to their destination on time.
+
+<p class="w3-quarter w3-left " style="margin:2%;  width:40%"> 
+<span class="w3-large"><b>1. Test Purpose</b></span><br>
+The next step was to evaluate the consistency of the travel time of the Turtlebot. 
+We needed to ensure that the Turtlebot will be consistent in its travel time as well as the path chosen for 
+any given destination assuming the same initial position and environment.  Have in mind that between the second and third sprint, 
+the user seat and an extra level was installed on the Turtlebot, jeopardizing its consistency. This evaluation would provide insights on 
+how much the Turtlebot was affected in terms of consistency with the additional modifications. 
+</p>
+
+<p class="w3-quarter w3-left " style="margin:2%;  width:40%"> 
+<span class="w3-large"><b>2. Test Procedure</b></span><br>
+During the second sprint, we had only 3 destinations available for the Turtlebot whereas, during the third sprint, 
+our destinations grew to 10. For each hub-to-point-of-interest (<b>where the hub is the starting positin of the Turtlebot</b>) journey, 20 tests were carried out to 
+measure the time taken for the Turtlebot to travel (after receiving the command to move to the destination) 
+from its hub to the specified destination. We then calculated the average of the travel times for each journey, 
+and plotted the deviation of each test from its respective average journey time. <b>In the graph on the left, we have the tests for the second sprint,
+and on the right we have the tests for the third sprint.</b>
+
+</p>
+
+<img class="w3-left" src="./figs/time_consistency_old.png" style="border: 4px solid transparent;
+    padding: 15px;
+    border-color: black;
+    border-image: url(border.png) 30 round; width: 40%;">
+
+    <img class="w3-right" src="./figs/time_consistency.png" style="border: 4px solid transparent;
+    padding: 15px;
+    border-color: black;
+    border-image: url(border.png) 30 round; width: 50%; margin-right: 5%;">
+
+  <p class="w3-quarter w3-left" style="margin:2%;  width:70%; margin-top: 5%; margin-right: 20%;">
+  <span class="w3-large"><b>3. Test Results</b></span><br>
+  From the analysis, we can observe that most of <b>the travel times for each journey deviated from their 
+  respective averages in the margin of 5%</b>. Furthermore, the consistency of the Turtlebot in terms of travel time remained stable. 
+  Our product's time consistency is of major importance, as for customers to trust our product in a real-world scenario,
+   we need to ensure that it is reliable and capable of carrying passengers to their destination on time.
   
   </p>
 
-  <img class="w3-right" src="./figs/time_consistency.png" style="border: 4px solid transparent;
-    padding: 15px;
-    border-color: black;
-    border-image: url(border.png) 30 round;">
+ 
    
 </div>
 
 <p class="w3-center w3-large">Accuracy of the Final Position for Each Journey</p>
 <div style="padding:40px 10px;  display:inline-block;">
-<p class="w3-quarter " style="margin:2%;  width:40%; ">
-Another feature we wanted to evaluate was the accuracy of the Turtlebot's final position (coordinates given in the database) from the actual, tested 
-final position for each journey. For each hub-to-point-of-interest journey, 20 tests were carried out. When the turtlebot reached the destination, 
-we recorded its position and calculated the difference between the given coordinates and the actual coordinates. <b>Note that the distance the Turtlebot 
-traveled was between 1.5m to 5.5m</b>. During our navigation parameter tuning, we manually allowed the Turtlebot a tolerance of 25cm to reach the 
-destination (using the <i>xy_goal_tolerance</i> parameter), meaning that within a 25cm radius of the given coordinates the Turtlebot would stop and 
-assume it has reached its destination. Our measurements show that the <i>maximum difference in disparity we get is 5cm</i>, which we deem to be acceptable. 
-In a real-world scenario, our product will be scaled up meaning that these measurements will change. However, we estimate that the accuracy of 
-the localization of the Turtlebot will not, as the same principles will be used even if the distance travelled is larger.  
-
+<p class="w3-quarter w3-left " style="margin:2%;  width:40%"> 
+<span class="w3-large"><b>1. Test Purpose</b></span><br>
+The last step was to evaluate the accuracy of the Turtlebot's final position (coordinates given in the database) from the actual, tested final position for each journey. 
+Have in mind that during our navigation parameter tuning, we manually allowed the Turtlebot a tolerance of 25cm to reach the destination (using the <i>xy_goal_tolerance</i> parameter), 
+meaning that within a 25cm radius of the given coordinates the Turtlebot would stop and assume it has reached its destination.
 </p>
-<img class="w3-right" src="./figs/distance_consistency.png" style="border: 4px solid transparent;
-  padding: 15px;
+
+<p class="w3-quarter w3-left " style="margin:2%;  width:40%"> 
+<span class="w3-large"><b>2. Test Procedure</b></span><br>
+For each hub-to-point-of-interest journey, 20 tests were carried out. When the Turtlebot reached the destination, 
+we recorded its position and calculated the difference between the given coordinates and the actual coordinates. 
+<b>Note that the distance the Turtlebot traveledm, on any journey, was between 1.5m to 5.5m</b>.
+</p> <br>
+
+<img class="w3-left" src="./figs/distance_consistency.png" style="border: 4px solid transparent;
   border-color: black;
+  margin-top: 3%;
+  margin-left: 20%;
   border-image: url(border.png) 30 round;
   width: 54%;">
+
+<p class="w3-quarter w3-left " style="margin:2%;  width:70%"> 
+<span class="w3-large"><b>3. Test Results</b></span><br>
+Our measurements show that <b>the maximum difference in disparity we get is 5cm</b>, which we deem to be acceptable. 
+In a real-world scenario, our product will be scaled up, meaning that these measurements will change. However, 
+we estimate that the accuracy of the localization of the Turtlebot will not, as the same principles will be used even 
+if the distance traveled is larger. We allow a minor tolerance for the Turtlebot having in mind that there isn't a 
+specific spot for the airport point-of-interest but rather a general area for the user to arrive at.
+</p>
+
+
+
 
 </div>
 
