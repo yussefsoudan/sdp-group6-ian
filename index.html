@@ -467,6 +467,7 @@ h1 {
       <a href="#eval" class="w3-bar-item w3-button"> Evaluation</a>
       <a href="#budget" class="w3-bar-item w3-button"> Budget</a>
       <a href="#team" class="w3-bar-item w3-button"> Team</a>
+      <a target="_blank" href="https://sdp2020.gitlab.io/posts/group6/" class="w3-bar-item w3-button"> Comments</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -669,11 +670,11 @@ h1 {
     <p>On the left, you could find a video demonstrating how our system works. <br>
     On the right, you could interact with our UI that is demonstrated in the video.
     </p>
-    <div class="w3-left">
+    <div class="w3-left" style="margin-left: -5%; margin-top: 10%;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/_sBBaNYex3E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="w3-right"id="content" style="width:40%; height: 35% !important; ">
-        <iframe style="border: none;" width="800" height="350" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fz0FUcKmddMIAAIWo7wBAEz%2FIanUi%3Fembed_host%3Dshare%26scaling%3Dcontain%26node-id%3D1%253A23" allowfullscreen></iframe>
+    <div class="w3-right"id="content" style="width:50%; height: 60% !important;  margin-right: -5%; ">
+      <iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FduTgXtkSFesVInOcbVHsYc%2FIanUi-Copy%3Fnode-id%3D1%253A23%26scaling%3Dscale-down" allowfullscreen></iframe>
       </div>
 
   </div>
@@ -854,16 +855,21 @@ h1 {
       <div style="padding:0px 10px; display:inline-block;">
         <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
         <span class="w3-large"><b>3. Parameter Tuning</b></span><br>
-        Even though the Navigation functionality was working, it was not accurate. To alleviate that, we had to tune certain navigation parameters. 
-        The job of navigation stack is to produce a safe path for the Turtlebot to execute, by processing data from odometry, 
-        sensors and the environment map. Maximizing the performance of this navigation stack requires some fine-tuning of parameters.
+        One of the most difficult challenges we faced in the Navigation team was improving 
+        the navigation's behavior. Even though the navigation was functional, it was not accurate. 
+        To alleviate that, we had to tune certain parameters which proved to be a challenging task as we had to constantly 
+        evaluate the effect of each parameter. Our goal was to establish a combination of parameters that would provide 
+        the optimal navigation behavior. In technical terms, the job of the navigation package is to produce a safe path 
+        for the Turtlebot to execute, by processing data from odometry, sensors and the environment map. 
+        Optimizing the performance of this navigation package requires some fine-tuning of these parameters.
         Tuned parameters include: <br><br>
     
+        
+        </p>
+        <p class="w3-right" style="width: 40%; margin-right: 10%; margin-top: 4%; text-align: left;">
         • <b>sim_time</b>: the time allowed for the robot to examine each possible velocity value and pick the highest-scored trajectory. <br>
         • <b>path_distance_bias</b>: is the weight for how much the local planner should stay close to the global path. It makes 
         the navigation smoother as it is more attached to the global planner's path. <br>
-        </p>
-        <p class="w3-right" style="width: 40%; margin-right: 10%; margin-top: 4%; text-align: left;">
         • <b>yaw_goal_tolerance</b>: the tolerance in radians for the controller in rotation when achieving its goal. <br>
         • <b>xy_goal_tolerance</b>: the tolerance in meters for the controller in the x and y distances when achieving a goal. <br>
         • <b>max_vel_x, min_vel_x</b>: range of the velocity the robot can take. <br>
@@ -877,7 +883,7 @@ h1 {
       <div style="padding:0px 10px; display:inline-block; ">
         <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
         <span class="w3-large"><b>4. Navigation Scripting</b></span><br>
-        We wanted to replace the functionality RViz was giving us, which was to publish the initial position as well as the destination <i>manually</i>. 
+        The next step after the navigation optimization was to replace the visual tool RViz, which allowed us to publish the initial position as well as the destination <i>manually</i>. 
         The python scripts we have written use packages like <b>rospy, move_base_msgs.msg, actionlib, actionlib_msgs</b>, and <b>geometry_msgs</b> to manipulate 
         the message types for publishing. These libraries give us access to the message parameters.
         The <b>actionlib</b> library allows us to create a client Node to the <b>MoveBaseAction</b> interface. Essentially, 
@@ -904,8 +910,10 @@ h1 {
       <div style="padding:0px 10px; display:inline-block; ">
         <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
         <span class="w3-large"><b>5. Live Location Tracking</b></span><br>
-         For the live-tracking feature, there were no already-existing packages that had such functionality, so this was manually 
-         implemented by the team. Using the ROS topic, <b>/move_base/feedback</b>, we were able to receive the Turtlebot's location during navigation 
+         The last milestone of the Navigation team was to broadcast the location of the Turtlebot 
+         in a map in the UI while navigating. However, this proved to be another challenge as there were no already-existing 
+         packages for a live-tracking feature, so this was manually implemented by the team. Using the ROS topic, <b>/move_base/feedback</b>, 
+         we were able to receive the Turtlebot's location during navigation 
          from the Turtlebot's own map of the arena. We also had a model map of the arena on the UI. We scaled and normalized the two maps in 
          order to broadcast the Turtlebot's location onto the UI map.
       </p>
@@ -1064,7 +1072,7 @@ h1 {
   </div>
 
   <p class="w3-center w3-large">Basic Navigation Functionalities</p>
-  <div style="padding:40px 10px; display:inline-block; margin-left: 2%;" >
+  <div style="padding:40px 10px; display:inline-block; margin-left: 10%;" >
     <p class="w3-quarter " style="margin:2%;  width:40%">
     <span class="w3-large"><b>1. Test Purpose</b></span><br>
       We needed to bring the navigation functionality to an acceptable stage 
@@ -1096,7 +1104,7 @@ h1 {
   <p class="w3-center w3-large">Consistency in Travel Time</p>
 <div style="padding:40px 10px; display:inline-block;">
 
-<p class="w3-quarter w3-left " style="margin:2%;  width:40%"> 
+<p class="w3-quarter w3-left " style="margin:2%;  width:40%;  margin-left: 10%;"> 
 <span class="w3-large"><b>1. Test Purpose</b></span><br>
 The next step was to evaluate the consistency of the travel time of the Turtlebot. 
 We needed to ensure that the Turtlebot will be consistent in its travel time as well as the path chosen for 
@@ -1117,16 +1125,17 @@ and on the right we have the tests for the third sprint.</b>
 </p>
 
 <img class="w3-left" src="./figs/time_consistency_old.png" style="border: 4px solid transparent;
-    padding: 15px;
+    padding: 0px;
+    margin-left: 4%;
     border-color: black;
     border-image: url(border.png) 30 round; width: 40%;">
 
     <img class="w3-right" src="./figs/time_consistency.png" style="border: 4px solid transparent;
-    padding: 15px;
+    padding: 0px;
     border-color: black;
     border-image: url(border.png) 30 round; width: 50%; margin-right: 5%;">
 
-  <p class="w3-quarter w3-left" style="margin:2%;  width:70%; margin-top: 5%; margin-right: 20%;">
+  <p class="w3-quarter w3-left" style="margin:2%;  width:70%; margin-top: 5%; margin-left: 10%;">
   <span class="w3-large"><b>3. Test Results</b></span><br>
   From the analysis, we can observe that most of <b>the travel times for each journey deviated from their 
   respective averages in the margin of 5%</b>. Furthermore, the consistency of the Turtlebot in terms of travel time remained stable. 
@@ -1141,14 +1150,14 @@ and on the right we have the tests for the third sprint.</b>
 
 <p class="w3-center w3-large">Accuracy of the Final Position for Each Journey</p>
 <div style="padding:40px 10px;  display:inline-block;">
-<p class="w3-quarter w3-left " style="margin:2%;  width:40%"> 
+<p class="w3-quarter w3-left " style="margin:2%;  width:40%; margin-left: 10%;"> 
 <span class="w3-large"><b>1. Test Purpose</b></span><br>
 The last step was to evaluate the accuracy of the Turtlebot's final position (coordinates given in the database) from the actual, tested final position for each journey. 
 Have in mind that during our navigation parameter tuning, we manually allowed the Turtlebot a tolerance of 25cm to reach the destination (using the <i>xy_goal_tolerance</i> parameter), 
 meaning that within a 25cm radius of the given coordinates the Turtlebot would stop and assume it has reached its destination.
 </p>
 
-<p class="w3-quarter w3-left " style="margin:2%;  width:40%"> 
+<p class="w3-quarter w3-left " style="margin:2%;  width:40%; "> 
 <span class="w3-large"><b>2. Test Procedure</b></span><br>
 For each hub-to-point-of-interest journey, 20 tests were carried out. When the Turtlebot reached the destination, 
 we recorded its position and calculated the difference between the given coordinates and the actual coordinates. 
@@ -1162,7 +1171,7 @@ we recorded its position and calculated the difference between the given coordin
   border-image: url(border.png) 30 round;
   width: 54%;">
 
-<p class="w3-quarter w3-left " style="margin:2%;  width:70%"> 
+<p class="w3-quarter w3-left " style="margin:2%;  width:70%; margin-left: 10%;"> 
 <span class="w3-large"><b>3. Test Results</b></span><br>
 Our measurements show that <b>the maximum difference in disparity we get is 5cm</b>, which we deem to be acceptable. 
 In a real-world scenario, our product will be scaled up, meaning that these measurements will change. However, 
@@ -1178,7 +1187,7 @@ specific spot for the airport point-of-interest but rather a general area for th
 
 <p class="w3-center w3-large">UI User Testing</p>
 <div style="padding:10px 16px;  display:inline-block;">
-<p class="w3-quarter w3-left" style="margin:2%;  width:40%; ">
+<p class="w3-quarter w3-left" style="margin:2%;  width:40%; margin-left: 10%;">
  <span class="w3-large"><b>1. Testing Procedure</b></span><br>
  We tested our user interface on 5 participants over the age of 50. 
  We initially explained what IAN was and the physical functionality of IAN so that our user interface had more context. 
@@ -1207,7 +1216,7 @@ specific spot for the airport point-of-interest but rather a general area for th
 </div>
 
 <div style="padding:10px 16px;  display:inline-block;">
-<p class="w3-quarter w3-left" style="margin:2%; margin-top: -12%;  width:40%; ">
+<p class="w3-quarter w3-left" style="margin:2%; margin-top: -12%;  width:40%; margin-left: 10%;">
  <span class="w3-large"><b>3. Improvements</b></span><br>
  We learned from our testing that we took for granted intuitive understanding of common design elements. 
  Many features of our UI weren't confusing for us (the team) or our peers (others on the course), but they 
@@ -1238,7 +1247,7 @@ is over makes the system less intimidating and more personal. <br>
 <!-- Budget Section -->
 <div class="w3-container" style="padding:128px 16px; background-color: rgb(235,235,235)" id="budget">
   <h3 class="w3-center">Budget</h3>
-  <p class="w3-center w3-large">System Costs</p>
+  <p class="w3-center w3-large"><i>Current</i> System Costs</p>
   <p class="w3-center">The total cost of items borrowed in the making of the system is <b>£1502</b>. <br>
   The breakdown of the borrowed items' costs is shown in by the following piechart.</p>
   <img src="./figs/piechart.jpg" style="border: 4px solid transparent;
@@ -1265,6 +1274,82 @@ and wire concealment. We also planned to include text-to-speech features and war
 to alert other passengers who may come in the way of the system. We estimate that this would 
 cost an additional £20 - £25.
 </p>
+
+<p class="w3-center w3-large" style="margin-top: 7%; margin-bottom: 5%;">Business Plan</p>
+<p class="w3-quarter w3-left" style="margin:2%;  width:40%; margin-left: 10%;">
+ <span class="w3-large"><b>1. Current Human Service Cost:</b></span><br>
+ We start by making a few assumptions about the market: <br><br>
+ &nbsp; • According to the <a target="_blank" href="https://www.caa.co.uk/News/UK-Civil-Aviation-Authority-reports-on-disabled-access-at-UK-airports/">UK Civil Aviation Authority</a>, 
+ there was a record number of 3.7 million requests for assistance at UK airports in the latest year. <br>
+&nbsp; • We presume it takes one airport staff member a working hour to fulfill such an assistance request. <br>
+&nbsp; • According to Glassdoor, British Airways' customer service staff on the ground make between £10-13/hour. We will presume it's £15/hr for the sake of making a safer estimate.<br><br>
+
+We presume that our product can only fulfill half of those requests, which are 1,850,000 requests a year. Given those assumptions, we estimate the cost of responding to those 3.7 million requests to be <b>1,850,000 x £15 = £27,750,000</b>.
+</p>
+
+<p class="w3-quarter w3-right" style="margin:2%;  width:40%; ">
+<span class="w3-large"><b>2. Product Units Estimate</b></span><br>
+ We now have to make assumptions about the units of the product we would produce per annum. 
+ Considering there are 3.7 million mobility assistance requests per year (365 days), that amounts to around 10,136 such requests a day. 
+ We make another assumption here that our product can only cater to half of those, so 5,000 requests a day. 
+ If we also presume a completely uniform distribution of those requests on the 24 hours of the day, we arrive at 208 requests per hour. 
+ To recap, that is <b>208 mobility requests that our product can fulfill per hour around the UK</b>. 
+ Therefore, it makes sense to produce 208 units in the first year and release 208 of the enhanced version of the product each following year.
+</p>
+
+<p class="w3-quarter w3-left" style="margin:2%;  width:40%; margin-left: 10%;">
+ <span class="w3-large"><b>3. Deployment Costs: Fixed Costs</b></span><br>
+   Staff Costs: <br>
+    &nbsp; • FTE 1.0 – CEO (strategy/governance) – Salary Costs = £35,000 pa.<br>
+    &nbsp; • FTE 1.0 – CTO (technical) – Salary Costs = £35,000 pa. <br>
+    &nbsp; • FTE 1.0 – Engineer (robotics) – Salary Costs = £30,000 pa.<br>
+    &nbsp; • FTE 1.0 – Software Developer – Salary Costs = £30,000 pa.<br>
+    &nbsp; • FTE 1.0 – Sales Manager – Salary Costs = £25,000 pa.<br>
+    &nbsp; • Employers contributions (for staff, e.g., pensions, bonuses, employers NI, appreciation about 20% of staff costs): £26,000 pa.<br>
+    Lease / Rent / Office Space Costs: £20,000 pa.<br>
+    Equipment Lease (e.g. long-term equipment for building robots etc.): £15,000 pa.<br>
+    Insurance (liability, indemnity, employers, buildings cover, contents & stock, legal expenses, theft, criminal damages, etc.): £2,000 pa.<br>
+    IT (software, computing equipment, data storage, etc.): £15,000 pa.<br>
+    <b>Therefore, we project our fixed costs to have a rough total of £233,000 per annum.</b>
+</p>
+
+<p class="w3-quarter w3-right" style="margin:2%;  width:40%; margin-top:-5%;">
+<span class="w3-large"><b>4. Deployment Costs: Variable Costs</b></span><br>
+ <b>Inbound Logistics</b> - materials required for robots: <br>
+  &nbsp; • Motorized wheelchair: £600-£2000. <br>
+  &nbsp; • Motherboard with CPU unit, fan and the display screen: £600.<br>
+  &nbsp; • Barcode Scanners: £15-29.<br>
+  &nbsp; • Light/weight sensors: £2-7.<br>
+  &nbsp; • LIDAR sensor £146.<br>
+  &nbsp; • <b>Total for each unit: £1360-2780. </b><br>
+  &nbsp; • We will take the total for all units (208) to be the upper bound of all the costs above.<br>
+  &nbsp; • <b>Therefore, the inbound logistics total is £2780 x 208 =  £578,240 per annum.</b><br>
+<b>Operational Costs</b> - production costs: <br> 
+  &nbsp; • N/A as it's covered in the fixed costs. <br>
+<b>Outbound Logistics</b> - delivery/handling costs: <br>
+  &nbsp; • Looking at other companies' delivery costs of equipment of similar weight, 
+  we project the delivery and handling costs to be around <b>£40 per unit</b>, which's a fairly cruel estimate. <br>
+  &nbsp; • Accounting for the delivery of 208 units, <b>the outbound logistics total comes to around £40 * 208 = £8,320 per annum.</b><br>
+<b>Customer Services</b> - labour costs:<br>
+&nbsp; • N/A as we presume this is covered in the staff costs. <br>
+<b>Therefore, the total variable costs per annum are projected to be £586,560.</b>
+</p>
+
+<p class="w3-quarter w3-left" style="margin:2%;  width:40%; margin-left: 10%;">
+ <span class="w3-large"><b>5. Revenue Streams</b></span><br>
+   To recap, our total costs are around <b>£819,560 per annum</b>. <br>
+   This is only around <b>3% of the 27,750,000 cost of human assistance</b>. <br><br>
+
+   We first assume the purchasing option would be narrowed down to purchasing each unit independently, at least to begin with. 
+   Since our total costs per annum are estimated to be around £819,560 assuming the production of 208 units (i.e. <b>£3,940 per unit</b>),  
+   we will set <b>a price of £5,000 per unit</b>. <br><br>
+  
+  Assuming the sale of 208 such units a year, the <b>revenue stream should be around £1,040,000 per annum</b> (around 4% of the human cost per annum). 
+  This makes for a <b>profit of roughly £220,440 per annum.</b>
+
+</p>
+
+
 </div>
 
 
