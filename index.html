@@ -661,7 +661,7 @@ h1 {
           John is 65 years old and he traveled for hours to reach the airport for his flight. 
           He is feeling exhausted and the airport is large. His gate and restaurants are a long way 
           from airport security and he would appreciate some help getting there. 
-          However, he did not request special assistance prior to his arrival, and hence does not have priority and will have to wait until a member of stuff becomes available. 
+          However, he did not request special assistance prior to his arrival, and hence does not have priority and will have to wait until a member of staff becomes available. 
           John uses IAN to take him to any point of interest within the airport without the need for human involvement. </p> 
 
           <p class="w3-right" style="padding-bottom: 0%; width: 40%; text-align: left">
@@ -694,7 +694,7 @@ h1 {
         <p class="w3-left" style="width: 40%; text-align: left;">Our system is currently composed of the following components: <br><br>
         &nbsp; • <b>The Turtlebot and its Raspberry Pi</b> - contains the core navigation logic. <br>
         &nbsp; • <b>The User Pi </b> -  a Raspberry Pi needed by the Turtlebot Pi to act as the ‘master’ for the Turtlebot’s navigation. <br>
-        &nbsp; • <b>The Server Pi</b> -  a Raspberry Pi that contains the database and actsas an airport  server. <br>
+        &nbsp; • <b>The Server Pi</b> -  a Raspberry Pi that contains the database and acts as an airport  server. <br>
         &nbsp; • <b>The UI</b> - lives on the User Pi and is displayed on a 7" touchscreen. <br>
         &nbsp; • <b>The Camera</b> - acts as a barcode scanner; scans boarding passes, and is connected to the User Pi. <br>
         &nbsp; • <b>The User Seat</b> - built on top of the Turtlebot. <br>
@@ -766,7 +766,7 @@ h1 {
         <span class="w3-large"><b> Navigating Multiple Floors</b></span><br>
         <p>A potential further development of IAN is to navigate buildings with multiple floors. 
         Multiple airports host restaurants and shops on different building floors than the departure gates. 
-        One way to do this is to incorporate IAN's functionalities with Airport lifts, although this would require further research. </p>
+        One way to do this is to incorporate IAN's functionalities with airport lifts, although this would require further research. </p>
 
         <span class="w3-large"><b> Multiple Languages</b></span><br>
         <p>Available only in English now, one of the next steps we intend to take is to make our product 
@@ -783,7 +783,7 @@ h1 {
         <span class="w3-large"><b> Market Transferability</b></span><br>
         <p>As of now, our primary customers are airports. However, IAN can easily be adapted to satisfy 
         different market segments. From insurance companies that provide services to injured workers to 
-        firms that want to make their offices accessible to their disabled employees. We can vouch that 
+        firms that want to make their offices accessible to their disabled employees, we can vouch that 
         IAN has the potential to fulfill all requests of special assistance in a building environment. </p>
 
       </div><!-- end .accordion__content -->
@@ -945,7 +945,7 @@ h1 {
         <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
         <span class="w3-large"><b>4. Navigation Scripting</b></span><br>
         The next step after the navigation optimization was to replace the visual tool RViz, which allowed us to publish the initial position as well as the destination <i>manually</i>. 
-        The python scripts we have written use packages like <b>rospy, move_base_msgs.msg, actionlib, actionlib_msgs</b>, and <b>geometry_msgs</b> to manipulate 
+        The Python scripts we have written use packages like <b>rospy, move_base_msgs.msg, actionlib, actionlib_msgs</b>, and <b>geometry_msgs</b> to manipulate 
         the message types for publishing. These libraries give us access to the message parameters.
         The <b>actionlib</b> library allows us to create a client Node to the <b>MoveBaseAction</b> interface. Essentially, 
         the <b>MoveBaseAction</b> accepts goals from clients and attempts to move the Turtlebot to the specified position/orientation in the world. 
