@@ -595,91 +595,114 @@ h1 {
         </i>
       </h4><!-- end .accordion__title -->
       <div class="accordion__content" style="width: 80%;">
-    <div class="w3-row-padding w3-center" style="margin-top:64px" >
 
-      <div class="w3-quarter w3-left" style="width: 45%;"> 
-      <i class="fas fa-route w3-margin-bottom w3-jumbo w3-center" ></i>
-      <p class="w3-large">Autonomous Navigation</p>
-      <p>Our system features fully autonomous navigation. 
-      Designed with safety and efficiency in mind, it finds 
-      the best path to the destination while also integrating 
-      obstacle avoidance and smart pathing. This ensures that 
-      all requests are fulfilled quickly and that the user is safe 
-      and comfortable for the whole duration of the journey.</p>
-      </div>
+        <div style="padding:40px 10px; display:inline-block;">
+          <p class="w3-large w3-center" style="margin-bottom: 4%;">System Overview</p>
+          <p class="w3-center " style="margin-left: 30%; margin-right: auto;  width:45%">
+            We introduce IAN, the interactive airport navigator, which will assist travelers in reaching points
+              of interest. We particularly provide an amalgam of two features that doesn’t exist in other competing robots
+              by combining autonomous navigation with a chair, thereby making I.A.N. an autonomously-moving chair.
+           </p>
+          </div>
 
-    <div class="w3-quarter w3-right" style="width: 45%; margin-left: 1%;" >
-      <i class="fas fa-tablet w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Smart UI</p>
-      <p>IAN is operated through our smart UI. Built to satisfy the latest user experience guidelines, 
-      our smart UI is accessible to everyone, 
-      featuring: large icons, easy-to-follow text, real-time flight information, live notifications and daltonism friendly color schemes.</p>
-    </div>
 
-    
-  </div>
+        <div class="w3-row-padding w3-center" style="margin-top:64px" >
+          <p class="w3-large w3-center" style="margin-bottom: 4%;padding-bottom: 5%;">System Features</p>
 
-  <div class="w3-row-padding w3-center" style="margin-top:64px" >
+          <div class="w3-quarter w3-left" style="width: 45%;"> 
+          <i class="fas fa-route w3-margin-bottom w3-jumbo w3-center" ></i>
+          <p class="w3-large">Autonomous Navigation</p>
+          <p>Our system features fully autonomous navigation. 
+          Designed with safety and efficiency in mind, it finds 
+          the best path to the destination while also integrating 
+          obstacle avoidance and smart pathing. This ensures that 
+          all requests are fulfilled quickly and that the user is safe 
+          and comfortable for the whole duration of the journey.</p>
+          </div>
 
-      <div class="w3-quarter w3-center" style="width: 45%; margin-left: 30%;"> 
-      <i class="fas fa-life-ring w3-margin-bottom w3-jumbo w3-center" ></i>
-      <p class="w3-large">Safety & Comfort</p>
-      <p>Comfort and safety are our utmost priorities. 
-      As such, we worked very closely with experts to design a product that, not only is secure and safe, 
-      but also provides the user with much-needed comfort.  </p>
-      </div>
+          <div class="w3-quarter w3-right" style="width: 45%; margin-left: 1%;" >
+            <i class="fas fa-tablet w3-margin-bottom w3-jumbo"></i>
+            <p class="w3-large">Smart UI</p>
+            <p>IAN is operated through our smart UI. Built to satisfy the latest user experience guidelines, 
+            our smart UI is accessible to everyone, 
+            featuring: large icons, easy-to-follow text, real-time flight information, live notifications and daltonism friendly color schemes.</p>
+          </div>
 
-      
-    
-  </div>
+        
+        </div>
 
-  <div class="w3-row-padding w3-center" style="margin-top:84px" >
-  <p class="w3-large w3-center" style="padding-bottom: 10%;">System Components</p>
-  <p class="w3-left" style="width: 40%; text-align: left;">Our system is currently composed of the following components: <br><br>
-  &nbsp; • <b>The Turtlebot and its Raspberry Pi</b> - contains the core navigation logic. <br>
-  &nbsp; • <b>The User Pi </b> -  a Raspberry Pi needed by the Turtlebot Pi to act as the ‘master’ for the Turtlebot’s navigation. <br>
-  &nbsp; • <b>The Server Pi</b> -  a Raspberry Pi that contains the database and actsas an airport  server. <br>
-  &nbsp; • <b>The UI</b> - lives on the User Pi and is displayed on a 7" touchscreen. <br>
-  &nbsp; • <b>The Camera</b> - acts as barcode scanner; scans boarding passes, and is connected to the User Pi. <br>
-  &nbsp; • <b>The User Seat</b> - built on top of the Turtlebot. <br>
-  </p>
+        <div class="w3-row-padding w3-center" style="margin-top:64px" >
 
-  <img class="w3-right" src="./figs/system.jpg" style="border: 4px solid transparent;
-          margin-right: 0%;
-          width: 50%;
-          border-color: black;
-          border-image: url(border.png) 30 round;">
+            <div class="w3-quarter w3-center" style="width: 45%; margin-left: 30%;"> 
+            <i class="fas fa-life-ring w3-margin-bottom w3-jumbo w3-center" ></i>
+            <p class="w3-large">Safety & Comfort</p>
+            <p>Comfort and safety are our utmost priorities. 
+            As such, we worked very closely with experts to design a product that, not only is secure and safe, 
+            but also provides the user with much-needed comfort.  </p>
+            </div>
+
+        </div>
+
+        <div class="w3-row-padding w3-center" style="margin-top:84px" >
+          <p class="w3-large w3-center" style="padding-bottom: 6%;">System Functionality</p>
+          <p class="w3-center" style="padding-bottom: 0%;">
+          The intended functionality of our system is demonstrated by the flow chart below. </p> <br>
   
-  </div>
+          <img class="w3-center" src="./figs/flow.jpg" style="border: 2px solid transparent;
+                  
+                  width: 60%;
+                  border-color: black;
+                  border-image: url(border.png) 20 round;">
+  
+          </div>
 
-  <div class="w3-row-padding w3-center" style="margin-top:84px" >
-  <p class="w3-large w3-center" style="padding-bottom: 6%;">System Functionality</p>
-  <p class="w3-center" style="padding-bottom: 0%;">
-  The intended functionality of our system is demonstrated by the flow chart below. </p> <br>
+        <div class="w3-row-padding w3-center" style="margin-top:84px" >
+        <p class="w3-large w3-center" style="padding-bottom: 10%;">System Components</p>
+        <p class="w3-left" style="width: 40%; text-align: left;">Our system is currently composed of the following components: <br><br>
+        &nbsp; • <b>The Turtlebot and its Raspberry Pi</b> - contains the core navigation logic. <br>
+        &nbsp; • <b>The User Pi </b> -  a Raspberry Pi needed by the Turtlebot Pi to act as the ‘master’ for the Turtlebot’s navigation. <br>
+        &nbsp; • <b>The Server Pi</b> -  a Raspberry Pi that contains the database and actsas an airport  server. <br>
+        &nbsp; • <b>The UI</b> - lives on the User Pi and is displayed on a 7" touchscreen. <br>
+        &nbsp; • <b>The Camera</b> - acts as barcode scanner; scans boarding passes, and is connected to the User Pi. <br>
+        &nbsp; • <b>The User Seat</b> - built on top of the Turtlebot. <br>
+        </p>
 
-  <img class="w3-center" src="./figs/flow.jpg" style="border: 2px solid transparent;
-          
-          width: 60%;
-          border-color: black;
-          border-image: url(border.png) 20 round;">
+        <img class="w3-right" src="./figs/system.jpg" style="border: 4px solid transparent;
+                margin-right: 0%;
+                width: 50%;
+                border-color: black;
+                border-image: url(border.png) 30 round;">
+        
+        </div>
 
-  </div>
+        <!-- <div class="w3-row-padding w3-center" style="margin-top:84px" >
+        <p class="w3-large w3-center" style="padding-bottom: 6%;">System Functionality</p>
+        <p class="w3-center" style="padding-bottom: 0%;">
+        The intended functionality of our system is demonstrated by the flow chart below. </p> <br>
 
-  <div class="w3-row-padding w3-center" style="margin-top:64px; margin-top: 10%;" >
-    <p class="w3-large w3-center" style="margin-bottom: 4%;">System Demonstration</p>
-    <p>On the left, you could find a video demonstrating how our system works. <br>
-    On the right, you could interact with our UI that is demonstrated in the video.
-    </p>
-    <div class="w3-left" style="margin-left: -5%; margin-top: 10%;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/_sBBaNYex3E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="w3-right"id="content" style="width:50%; height: 60% !important;  margin-right: -5%; ">
-      <iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FduTgXtkSFesVInOcbVHsYc%2FIanUi-Copy%3Fnode-id%3D1%253A23%26scaling%3Dscale-down" allowfullscreen></iframe>
-      </div>
+        <img class="w3-center" src="./figs/flow.jpg" style="border: 2px solid transparent;
+                
+                width: 60%;
+                border-color: black;
+                border-image: url(border.png) 20 round;">
 
-  </div>
+        </div> -->
 
-      </div><!-- end .accordion__content -->
+        <div class="w3-row-padding w3-center" style="margin-top:64px; margin-top: 10%;" >
+          <p class="w3-large w3-center" style="margin-bottom: 4%;">System Demonstration</p>
+          <p>On the left, you could find a video demonstrating how our system works. <br>
+          On the right, you could interact with our UI that is demonstrated in the video.
+          </p>
+          <div class="w3-left" style="margin-left: -5%; margin-top: 10%;">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/_sBBaNYex3E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="w3-right"id="content" style="width:50%; height: 60% !important;  margin-right: -5%; ">
+            <iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FduTgXtkSFesVInOcbVHsYc%2FIanUi-Copy%3Fnode-id%3D1%253A23%26scaling%3Dscale-down" allowfullscreen></iframe>
+            </div>
+
+        </div>
+
+    </div><!-- end .accordion__content -->
     </div><!-- end .accordion 02 -->
 
     <div class="accordion">
@@ -716,6 +739,13 @@ h1 {
         <p>Available only in English now, one of the next steps we intend to take is to make our product 
         accessible for everyone from around the globe. For this, we plan to integrate many more languages, 
         such that any traveler, no matter which language they speak, would have a similar level of accessibility to IAN.</p>
+
+        <span class="w3-large"><b> Voice commands & Text-to-speech</b></span><br>
+        <p>While designed with the elderly in mind, our product range could be expanded to provide assistive
+        services to other groups. One of our main future goals is to make airports more comfortable for those
+        who are visually impaired. With some modifications, we plan to adapt the current product to include
+        voice accessibility and screen reading such that those who have sight difficulties would have a similar
+        level of accessibility to IAN</p>
 
         <span class="w3-large"><b> Market Transferability</b></span><br>
         <p>As of now, our primary customers are airports. However, IAN can easily be adapted to satisfy 
@@ -1080,20 +1110,22 @@ h1 {
     </p>
 
     <p class="w3-quarter w3-left" style="margin:2%;  width:40%; margin-left: 5%;">
+      <span class="w3-large"><b>2. Test Procedure</b></span><br>
+        Initially, even though the Turtlebot's navigation was functional,
+         we noticed that the planning and movement of the robot were inaccurate. 
+         The robot failed to reach its given destination, kept hitting the walls and obstacles even though 
+         they were clearly shown on the sensor map, went past the goals without stopping or was unable to assume the instructed orientation. 
+         For us to overcome these issues, the Navigation team had to constantly experiment with the Navigation Parameters (see the "How it Works" section). 
+         With each tuning, we informally evaluated the performance of the navigation and repeated the process.
+      </p>
+
+    <p class="w3-quarter w3-left" style="margin:2%;  width:40%;">
     <span class="w3-large"><b>3. Test Results</b></span><br>
       After a lot of experimentation and informal evaluation of the navigation behavior, 
       the team established a combination of parameters that would provide the optimal navigation behavior at the time.
     </p>
 
-    <p class="w3-quarter w3-left" style="margin:2%;  width:40%">
-    <span class="w3-large"><b>2. Test Procedure</b></span><br>
-      Initially, even though the Turtlebot's navigation was functional,
-       we noticed that the planning and movement of the robot were inaccurate. 
-       The robot failed to reach its given destination, kept hitting the walls and obstacles even though 
-       they were clearly shown on the sensor map, went past the goals without stopping or was unable to assume the instructed orientation. 
-       For us to overcome these issues, the Navigation team had to constantly experiment with the Navigation Parameters (see the "How it Works" section). 
-       With each tuning, we informally evaluated the performance of the navigation and repeated the process.
-    </p>
+   
 
     
 
@@ -1161,7 +1193,7 @@ meaning that within a 25cm radius of the given coordinates the Turtlebot would s
 <span class="w3-large"><b>2. Test Procedure</b></span><br>
 For each hub-to-point-of-interest journey, 20 tests were carried out. When the Turtlebot reached the destination, 
 we recorded its position and calculated the difference between the given coordinates and the actual coordinates. 
-<b>Note that the distance the Turtlebot traveledm, on any journey, was between 1.5m to 5.5m</b>.
+<b>Note that the distance the Turtlebot traveled, on any journey, was between 1.5m to 5.5m</b>.
 </p> <br>
 
 <img class="w3-left" src="./figs/distance_consistency.png" style="border: 4px solid transparent;
