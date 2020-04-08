@@ -599,9 +599,17 @@ h1 {
         <div style="padding:40px 10px; display:inline-block;">
           <p class="w3-large w3-center" style="margin-bottom: 4%;">System Overview</p>
           <p class="w3-center " style="margin-left: 30%; margin-right: auto;  width:45%">
-            We introduce IAN, the interactive airport navigator, which will assist travelers in reaching points
-              of interest. We particularly provide an amalgam of two features that doesn’t exist in other competing robots
-              by combining autonomous navigation with a chair, thereby making I.A.N. an autonomously-moving chair.
+            The user approaches the robot and presses the Start button on the screen. 
+            The user will be asked to scan their boarding pass. After, the system will check if 
+            the user’s boarding pass is valid by querying the remote database. If successful, the 
+            user's corresponding flight information and status will be displayed. The user will 
+            then be asked to choose where IAN should take them. They can choose to go to their gate 
+            or to other points of interest (e.g. restaurants). Once the user selects their destination, 
+            IAN should begin moving there. A change of flight status (e.g. gate number or flight time) 
+            could happen mid-journey. If it does, the user will be notified by the means of a screen pop-up. 
+            Once IAN reaches the destination, the user can press the exit button which returns IAN back to its 
+            initial position. At all times throughout the journey, the user will be able to pause and change 
+            their destination.
            </p>
           </div>
 
