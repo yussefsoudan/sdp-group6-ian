@@ -149,15 +149,15 @@ body, html {
 /* The dot/bullet/indicator container */
 .dot-container {
   text-align: center;
-  padding: 20px;
+  padding: 0px;
   background: #ddd;
 }
 
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 8px;
+  width: 8px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
@@ -166,8 +166,8 @@ body, html {
 }
 .dot-DB {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 8px;
+  width: 8px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
@@ -598,18 +598,13 @@ h1 {
 
         <div style="padding:40px 10px; display:inline-block;">
           <p class="w3-large w3-center" style="margin-bottom: 4%;">System Overview</p>
-          <p class="w3-center " style="margin-left: 30%; margin-right: auto;  width:45%">
-            The user approaches the robot and presses the Start button on the screen. 
-            The user will be asked to scan their boarding pass. After, the system will check if 
-            the user’s boarding pass is valid by querying the remote database. If successful, the 
-            user's corresponding flight information and status will be displayed. The user will 
-            then be asked to choose where IAN should take them. They can choose to go to their gate 
-            or to other points of interest (e.g. restaurants). Once the user selects their destination, 
-            IAN should begin moving there. A change of flight status (e.g. gate number or flight time) 
-            could happen mid-journey. If it does, the user will be notified by the means of a screen pop-up. 
-            Once IAN reaches the destination, the user can press the exit button which returns IAN back to its 
-            initial position. At all times throughout the journey, the user will be able to pause and change 
-            their destination.
+          <p class="w3-center " style="">
+            The purpose the system serves is to combine mobility assistance with way-finding. 
+            Thus, the intended setup of the product is to be available for use for travelers after passing airport security. 
+            From there, IAN can scan the traveler's boarding pass, provide them with their flight information and take them to their desired
+            destination in the airport. 
+
+          
            </p>
           </div>
 
@@ -641,7 +636,7 @@ h1 {
 
         <div class="w3-row-padding w3-center" style="margin-top:64px" >
 
-            <div class="w3-quarter w3-center" style="width: 45%; margin-left: 30%;"> 
+            <div class="w3-quarter w3-center" style="width: 45%; margin-left: 27.5%;"> 
             <i class="fas fa-life-ring w3-margin-bottom w3-jumbo w3-center" ></i>
             <p class="w3-large">Safety & Comfort</p>
             <p>Comfort and safety are our utmost priorities. 
@@ -837,14 +832,14 @@ h1 {
 
 
 <!-- NAVIGATION ANIMATION -->
-<div class="w3-container" style="padding-top:40px; margin: 0%;" id="howitworks">
+<div class="w3-container" style="padding-top:40px; padding-right: 0%; padding-left: 0%; margin: 0%;" id="howitworks">
   
   <!-- Slideshow container -->
-  <div class="slideshow-container w3-container" style="padding: 15px; min-height: 700px; max-height: 700px;">
+  <div class="slideshow-container w3-container" style="padding: 15px 20px; min-height: 700px; max-height: 700px;">
     <h3 class="w3-center">How It Works</h3>
   <p class="w3-center w3-large">Navigation</p>
     <!-- Full-width slides/quotes -->
-    <div class="mySlides">
+    <div class="mySlides" style="margin-left: 10%;">
       
       <div style="padding:10px 10px; display:inline-block;">
         <p class="w3-quarter w3-left" style="margin:2%;  width:30%; text-align: left;">
@@ -984,7 +979,7 @@ h1 {
  <div class="slideshow-container" style="margin-top:0%; min-height: 500px; max-height: 500px; padding: 15px;">
 <p class="w3-center w3-large">DB/Scanning</p>
   <!-- Full-width slides/quotes -->
-  <div class="mySlides-DB">
+  <div class="mySlides-DB" style="margin-left: 10%;">
     <div style="padding:10px 10px; display:inline-block;">
       <p class="w3-left" style="width: 40%; margin-left: 5%; text-align: left;">
       <span class="w3-large"><b>1. Scanning Setup</b></span><br>
@@ -1004,7 +999,7 @@ h1 {
   <div class="mySlides-DB">
     <div style="padding:10px 10px; display:inline-block;">
       <img class="w3-left" src="./figs/db.jpg" style="border: 4px solid transparent;
-        margin-left: 6%;
+        margin-left: 10%;
         width: 25%;
         border-color: black;
         border-image: url(border.png) 30 round;">
@@ -1019,7 +1014,7 @@ h1 {
 
   <div class="mySlides-DB">
     <div style="padding:10px 10px; display:inline-block;">
-      <p class="w3-left" style="width: 40%;   text-align: left;">
+      <p class="w3-left" style="width: 40%;   text-align: left; margin-left: 5%;">
       <span class="w3-large"><b>3. User Pi and Server Pi Communication</b></span><br>
       The next step after the migration of the DB on the Server Pi was to establish a secure and reliable communication channel between the User Pi and the Server Pi 
       in order to perform the read and query operations. 
@@ -1127,7 +1122,7 @@ h1 {
          With each tuning, we informally evaluated the performance of the navigation and repeated the process.
       </p>
 
-    <p class="w3-quarter w3-left" style="margin:2%;  width:40%;">
+    <p class="w3-quarter w3-left" style="margin:2%;  width:40%; margin-top: -8%;">
     <span class="w3-large"><b>3. Test Results</b></span><br>
       After a lot of experimentation and informal evaluation of the navigation behavior, 
       the team established a combination of parameters that would provide the optimal navigation behavior at the time.
